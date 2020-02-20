@@ -9,7 +9,7 @@
   <title>STLcontainers的选择 | Kechuno 顾可纯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="我就列举了一些我常用的帮助我记忆啦http:&#x2F;&#x2F;www.cplusplus.com&#x2F;reference&#x2F;stl&#x2F; Sequence containers: array (C++11) vector (random access iterator) deque (Double ended queue) forward_list list (bidirectional iterator)  Conta">
-<meta name="keywords" content="C++">
+<meta name="keywords" content="C++,Cheatsheet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STLcontainers的选择">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;12&#x2F;STLcontainers%E7%9A%84%E9%80%89%E6%8B%A9&#x2F;index.html">
@@ -17,7 +17,7 @@
 <meta property="og:description" content="我就列举了一些我常用的帮助我记忆啦http:&#x2F;&#x2F;www.cplusplus.com&#x2F;reference&#x2F;stl&#x2F; Sequence containers: array (C++11) vector (random access iterator) deque (Double ended queue) forward_list list (bidirectional iterator)  Conta">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;assets&#x2F;blogimg&#x2F;iterator.png">
-<meta property="og:updated_time" content="2020-02-13T15:59:30.977Z">
+<meta property="og:updated_time" content="2020-02-16T14:36:46.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;assets&#x2F;blogimg&#x2F;iterator.png">
   
@@ -281,6 +281,7 @@
 <li><em>The main drawback of lists and forward_lists compared to these other sequence containers is that they lack direct access to the elements by their position;</em></li>
 <li><em>They also consume some extra memory to keep the linking information associated to each element</em></li>
 </ol>
+<p>和std::vector不同的地方：<br>第一个是iterator的不同！这个是bidirectional iterator对照前面的表<br>有一些:<br>std::list::push_front();<br>std::list::pop_front();<br>std::list::emplace_front();</p>
 
       
 
@@ -295,6 +296,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Cheatsheet</a>
         		</li>
       		
 		</ul>
@@ -450,7 +455,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,15 +475,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,10 +500,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cmd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
