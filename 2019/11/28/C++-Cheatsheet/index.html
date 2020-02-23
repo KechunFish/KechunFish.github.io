@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Kechuno 顾可纯">
 <meta property="og:description" content="unordered_map&amp;lt;int, int&amp;gt;1234567unordered_map&amp;lt;int, int&amp;gt; example;&#x2F;&#x2F; Input:example[1] = 5;example[2] = 10;&#x2F;&#x2F; Output:output = example[1];  this1234567891011121314151617181920212223242526class E">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-22T13:53:39.363Z">
+<meta property="og:updated_time" content="2020-02-23T20:57:16.549Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kechuno 顾可纯" type="application/atom+xml">
@@ -205,10 +205,22 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; sortArray(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() &lt; <span class="number">2</span>) <span class="keyword">return</span> nums;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">1</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> min = INT_MAX;</span><br><span class="line">            <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; nums.size(); ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[j] &lt; min) min = nums[j], index = j;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i != index) <span class="built_in">std</span>::swap(nums[i], nums[index]);   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><a href="https://blog.csdn.net/lms1008611/article/details/80700307/" target="_blank" rel="noopener">https://blog.csdn.net/lms1008611/article/details/80700307/</a><br>C++中用struct定义的类中所有成员默认为public属性；class定义的类中所有成员默认为private属性</p>
-<h3 id="casting"><a href="#casting" class="headerlink" title="casting"></a>casting</h3><p>C++ type language<br>implicit type casting</p>
-<pre><code class="C++"><span class="keyword">int</span> a = <span class="number">5</span>;
-<span class="keyword">double</span> b = a;
-</code></pre>
+<h3 id="casting"><a href="#casting" class="headerlink" title="casting"></a>casting</h3><p>C++ type language<br>implicit type casting<br>it is easier to search for it</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">double</span> b = a;</span><br></pre></td></tr></table></figure>
+
+<h3 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a>sizeof</h3><p>The sizeof is a keyword, but it is a compile-time operator that determines the size, in bytes, of a variable or data type.<br>The result of sizeof is always nonzero, even if applied to an empty class type.</p>
+<p>sizeof does not evaluate the expression,and even if the expression designates a polymorphic object, the result is the size of the static type of the expression.</p>
+<h3 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a>unique_ptr</h3><p>另外unique_ptr还有更聪明的地方：当程序试图将一个 unique_ptr 赋值给另一个时，如果源 unique_ptr 是个临时右值，编译器允许这么做；如果源 unique_ptr 将存在一段时间，编译器将禁止这么做</p>
+<h3 id="virtual-function"><a href="#virtual-function" class="headerlink" title="virtual function"></a>virtual function</h3><h3 id="attributes-constructor-and-destructor"><a href="#attributes-constructor-and-destructor" class="headerlink" title="attributes constructor and destructor"></a>attributes constructor and destructor</h3><p><a href="https://gcc.gnu.org/onlinedocs/gcc-4.7.0/gcc/Function-Attributes.html" target="_blank" rel="noopener">https://gcc.gnu.org/onlinedocs/gcc-4.7.0/gcc/Function-Attributes.html</a><br>Functions with these attributes are useful for initializing data that will be used implicitly during the execution of the program.</p>
+<h3 id="code放在哪一个部分"><a href="#code放在哪一个部分" class="headerlink" title="code放在哪一个部分"></a>code放在哪一个部分</h3><h3 id="rvalue-amp-lvalue"><a href="#rvalue-amp-lvalue" class="headerlink" title="rvalue &amp; lvalue"></a>rvalue &amp; lvalue</h3><p>lvalue can be used to create an rvalue<br>lvalue can be transferred to rvalue</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">square</span><span class="params">(<span class="keyword">int</span>&amp; x)</span> </span>&#123; <span class="keyword">return</span> x*x &#125;</span><br><span class="line">square(i);     <span class="comment">// OK</span></span><br><span class="line">square(i*i);   <span class="comment">// Error</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">square</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp; x)</span> </span>&#123; <span class="keyword">return</span> x*x &#125;</span><br><span class="line">square(i);	   <span class="comment">// Error</span></span><br><span class="line">square(i*i);   <span class="comment">// OK</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="std-function"><a href="#std-function" class="headerlink" title="std::function"></a>std::function</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fff</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; a &lt;&lt; b &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">aaa</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line">	std::function&lt;void(int, int)&gt; ff = fff;</span><br><span class="line">	ff(<span class="number">5</span>, <span class="number">6</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">std</span>::function&lt;<span class="keyword">int</span>()&gt; aa = aaa;</span><br><span class="line">	<span class="keyword">int</span> temp = aa();	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h3><p>``` C++<br>int main()<br>{<br>    std::function&lt;void()&gt; func = <a href=""></a> { std::cout &lt;&lt; “hehe” &lt;&lt; std::endl;}<br>    func();<br>}</p>
 
       
 
@@ -283,7 +295,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#unordered-map-lt-int-int-gt"><span class="toc-number">1.</span> <span class="toc-text">unordered_map&lt;int, int&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-number">2.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const-amp-amp-mutable"><span class="toc-number">3.</span> <span class="toc-text">const &amp;&amp; mutable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-amp-amp-extern"><span class="toc-number">4.</span> <span class="toc-text">static &amp;&amp; extern</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#priority-queue"><span class="toc-number">5.</span> <span class="toc-text">priority_queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#337-House-Robber-III"><span class="toc-number">6.</span> <span class="toc-text">337. House Robber III</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pointer-amp-pointer-of-pointer"><span class="toc-number">7.</span> <span class="toc-text">pointer &amp; pointer of pointer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些"><span class="toc-number">8.</span> <span class="toc-text">一些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if-4-amp-5"><span class="toc-number">9.</span> <span class="toc-text">if(4 &amp; 5)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#function-pointer"><span class="toc-number">10.</span> <span class="toc-text">function pointer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-swap"><span class="toc-number">11.</span> <span class="toc-text">std::swap()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bubble-sort"><span class="toc-number">12.</span> <span class="toc-text">bubble sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#selction-sort"><span class="toc-number">13.</span> <span class="toc-text">selction sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">14.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#casting"><span class="toc-number">15.</span> <span class="toc-text">casting</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#unordered-map-lt-int-int-gt"><span class="toc-number">1.</span> <span class="toc-text">unordered_map&lt;int, int&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-number">2.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const-amp-amp-mutable"><span class="toc-number">3.</span> <span class="toc-text">const &amp;&amp; mutable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-amp-amp-extern"><span class="toc-number">4.</span> <span class="toc-text">static &amp;&amp; extern</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#priority-queue"><span class="toc-number">5.</span> <span class="toc-text">priority_queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#337-House-Robber-III"><span class="toc-number">6.</span> <span class="toc-text">337. House Robber III</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pointer-amp-pointer-of-pointer"><span class="toc-number">7.</span> <span class="toc-text">pointer &amp; pointer of pointer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些"><span class="toc-number">8.</span> <span class="toc-text">一些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if-4-amp-5"><span class="toc-number">9.</span> <span class="toc-text">if(4 &amp; 5)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#function-pointer"><span class="toc-number">10.</span> <span class="toc-text">function pointer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-swap"><span class="toc-number">11.</span> <span class="toc-text">std::swap()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bubble-sort"><span class="toc-number">12.</span> <span class="toc-text">bubble sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#selction-sort"><span class="toc-number">13.</span> <span class="toc-text">selction sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">14.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#casting"><span class="toc-number">15.</span> <span class="toc-text">casting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sizeof"><span class="toc-number">16.</span> <span class="toc-text">sizeof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unique-ptr"><span class="toc-number">17.</span> <span class="toc-text">unique_ptr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-function"><span class="toc-number">18.</span> <span class="toc-text">virtual function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#attributes-constructor-and-destructor"><span class="toc-number">19.</span> <span class="toc-text">attributes constructor and destructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code放在哪一个部分"><span class="toc-number">20.</span> <span class="toc-text">code放在哪一个部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rvalue-amp-lvalue"><span class="toc-number">21.</span> <span class="toc-text">rvalue &amp; lvalue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-function"><span class="toc-number">22.</span> <span class="toc-text">std::function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda"><span class="toc-number">23.</span> <span class="toc-text">lambda</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -391,11 +403,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -407,15 +419,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -427,15 +439,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">
