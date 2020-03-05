@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>OS复习 | Kechuno 顾可纯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用的是现代操作系统（第四版）">
+  <meta name="description" content="用的是现代操作系统（第四版） pipe管道主要包括无名管道和命名管道:管道可用于具有亲缘关系的父子进程间的通信，有名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信  traditional pipe is “unnamed” and lasts only as long as the process. A named pipe, however, can last as long">
 <meta name="keywords" content="复习,OS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OS复习">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;03&#x2F;OS%E5%A4%8D%E4%B9%A0&#x2F;index.html">
 <meta property="og:site_name" content="Kechuno 顾可纯">
-<meta property="og:description" content="用的是现代操作系统（第四版）">
+<meta property="og:description" content="用的是现代操作系统（第四版） pipe管道主要包括无名管道和命名管道:管道可用于具有亲缘关系的父子进程间的通信，有名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信  traditional pipe is “unnamed” and lasts only as long as the process. A named pipe, however, can last as long">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-12T22:21:35.830Z">
+<meta property="og:updated_time" content="2020-02-28T15:24:45.454Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kechuno 顾可纯" type="application/atom+xml">
@@ -162,7 +162,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>用的是现代操作系统（第四版）</p>
-
+<h3 id="pipe"><a href="#pipe" class="headerlink" title="pipe"></a>pipe</h3><p>管道主要包括无名管道和命名管道:管道可用于具有亲缘关系的父子进程间的通信，有名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信</p>
+<p> traditional pipe is “unnamed” and lasts only as long as the process. A named pipe, however, can last as long as the system is up, beyond the life of the process. It can be deleted if no longer used. Usually a named pipe appears as a file, and generally processes attach to it for IPC.</p>
+<h3 id="OS缺页置换算法"><a href="#OS缺页置换算法" class="headerlink" title="OS缺页置换算法"></a>OS缺页置换算法</h3><h3 id="死锁发生的条件以及如何解决死锁"><a href="#死锁发生的条件以及如何解决死锁" class="headerlink" title="死锁发生的条件以及如何解决死锁"></a>死锁发生的条件以及如何解决死锁</h3><h3 id="message-queue"><a href="#message-queue" class="headerlink" title="message queue"></a>message queue</h3><p><a href="https://www.geeksforgeeks.org/ipc-using-message-queues/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/ipc-using-message-queues/</a></p>
+<h3 id="虚拟内存和物理内存"><a href="#虚拟内存和物理内存" class="headerlink" title="虚拟内存和物理内存"></a>虚拟内存和物理内存</h3><p>要调用某个函数A，代码不是call A，而是call 0x0811111111</p>
+<h3 id="virtual-memory"><a href="#virtual-memory" class="headerlink" title="virtual memory"></a>virtual memory</h3><p><a href="https://www.youtube.com/watch?v=59rEMnKWoS4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=59rEMnKWoS4</a></p>
+<p>###<br>在使用虚拟内存的情况下，写时复制（Copy-On-Write）是以页为基础进行的</p>
+<p><a href="https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/#reading_17_concurrency" target="_blank" rel="noopener">https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/#reading_17_concurrency</a></p>
+<h3 id="shared-memory"><a href="#shared-memory" class="headerlink" title="shared memory"></a>shared memory</h3><p>A and B might be two processors (or processor cores) in the same computer, sharing the same physical memory.</p>
+<h3 id="请你说一说死锁发生的条件以及如何解决死锁"><a href="#请你说一说死锁发生的条件以及如何解决死锁" class="headerlink" title="请你说一说死锁发生的条件以及如何解决死锁"></a>请你说一说死锁发生的条件以及如何解决死锁</h3>
       
 
       
@@ -236,7 +244,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    false
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#pipe"><span class="toc-number">1.</span> <span class="toc-text">pipe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS缺页置换算法"><span class="toc-number">2.</span> <span class="toc-text">OS缺页置换算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁发生的条件以及如何解决死锁"><span class="toc-number">3.</span> <span class="toc-text">死锁发生的条件以及如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#message-queue"><span class="toc-number">4.</span> <span class="toc-text">message queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟内存和物理内存"><span class="toc-number">5.</span> <span class="toc-text">虚拟内存和物理内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-memory"><span class="toc-number">6.</span> <span class="toc-text">virtual memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shared-memory"><span class="toc-number">7.</span> <span class="toc-text">shared memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请你说一说死锁发生的条件以及如何解决死锁"><span class="toc-number">8.</span> <span class="toc-text">请你说一说死锁发生的条件以及如何解决死锁</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -348,14 +356,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -364,11 +364,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -381,14 +397,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cmd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -785,11 +785,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">复习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">复习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -949,7 +949,13 @@
 <h3 id="implicit-conversion-and-the-explicit-keyword"><a href="#implicit-conversion-and-the-explicit-keyword" class="headerlink" title="implicit conversion and the explicit keyword"></a>implicit conversion and the explicit keyword</h3><p>让implicit不允许</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Entity</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">string</span> Name;</span><br><span class="line">	<span class="keyword">int</span> Age;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Entity(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; name)</span><br><span class="line">		: Name(name), Age(<span class="number">-1</span>) &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">explicit</span> <span class="title">Entity</span><span class="params">(<span class="keyword">int</span> age)</span></span></span><br><span class="line">		: Name("unknown", Age(age)) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Entity a = <span class="string">"kechun"</span>;  <span class="comment">//可以通过constructor,implicit</span></span><br><span class="line">	Entity b = <span class="number">12</span>;        <span class="comment">//不可以因为有explicit</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="lvalue-amp-rvalue"><a href="#lvalue-amp-rvalue" class="headerlink" title="lvalue &amp; rvalue"></a>lvalue &amp; rvalue</h3><p><a href="https://blog.csdn.net/qq_39521554/article/details/88364471" target="_blank" rel="noopener">https://blog.csdn.net/qq_39521554/article/details/88364471</a></p>
+<h3 id="lt-gt-amp-“”"><a href="#lt-gt-amp-“”" class="headerlink" title="&lt;&gt; &amp; “”"></a>&lt;&gt; &amp; “”</h3><p>In practice, the difference is in the location where the preprocessor searches for the included file.</p>
+<p>For #include <filename> the preprocessor searches in an implementation dependent manner, normally in search directories pre-designated by the compiler/IDE. This method is normally used to include standard library header files.</p>
+<p>For #include “filename” the preprocessor searches first in the same directory as the file containing the directive, and then follows the search path used for the #include <filename> form. This method is normally used to include programmer-defined header files.</p>
+<h3 id="std-ref"><a href="#std-ref" class="headerlink" title="std::ref()"></a>std::ref()</h3><p>如果要reference给function pointer的话要加std::ref();</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">a</span><span class="params">(<span class="keyword">int</span>&amp; value)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; value &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    ++value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> value = <span class="number">5</span>;</span><br><span class="line">    <span class="function">thread <span class="title">t</span> <span class="params">(a, ref(value))</span></span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; value &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="multimap"><a href="#multimap" class="headerlink" title="multimap"></a>multimap</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; smallerNumbersThanCurrent(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() == <span class="number">0</span>) <span class="keyword">return</span> nums;</span><br><span class="line">        <span class="built_in">multimap</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> x : nums) m.emplace(x, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> it = m.begin(); it != m.end(); ++it)</span><br><span class="line">        &#123;</span><br><span class="line">            it-&gt;second = count;</span><br><span class="line">            ++count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; x : nums)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> it = m.find(x);</span><br><span class="line">            x = it-&gt;second;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -1027,7 +1033,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>用的是现代操作系统（第四版）</p>
-
+<h3 id="pipe"><a href="#pipe" class="headerlink" title="pipe"></a>pipe</h3><p>管道主要包括无名管道和命名管道:管道可用于具有亲缘关系的父子进程间的通信，有名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信</p>
+<p> traditional pipe is “unnamed” and lasts only as long as the process. A named pipe, however, can last as long as the system is up, beyond the life of the process. It can be deleted if no longer used. Usually a named pipe appears as a file, and generally processes attach to it for IPC.</p>
+<h3 id="OS缺页置换算法"><a href="#OS缺页置换算法" class="headerlink" title="OS缺页置换算法"></a>OS缺页置换算法</h3><h3 id="死锁发生的条件以及如何解决死锁"><a href="#死锁发生的条件以及如何解决死锁" class="headerlink" title="死锁发生的条件以及如何解决死锁"></a>死锁发生的条件以及如何解决死锁</h3><h3 id="message-queue"><a href="#message-queue" class="headerlink" title="message queue"></a>message queue</h3><p><a href="https://www.geeksforgeeks.org/ipc-using-message-queues/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/ipc-using-message-queues/</a></p>
+<h3 id="虚拟内存和物理内存"><a href="#虚拟内存和物理内存" class="headerlink" title="虚拟内存和物理内存"></a>虚拟内存和物理内存</h3><p>要调用某个函数A，代码不是call A，而是call 0x0811111111</p>
+<h3 id="virtual-memory"><a href="#virtual-memory" class="headerlink" title="virtual memory"></a>virtual memory</h3><p><a href="https://www.youtube.com/watch?v=59rEMnKWoS4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=59rEMnKWoS4</a></p>
+<p>###<br>在使用虚拟内存的情况下，写时复制（Copy-On-Write）是以页为基础进行的</p>
+<p><a href="https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/#reading_17_concurrency" target="_blank" rel="noopener">https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/#reading_17_concurrency</a></p>
+<h3 id="shared-memory"><a href="#shared-memory" class="headerlink" title="shared memory"></a>shared memory</h3><p>A and B might be two processors (or processor cores) in the same computer, sharing the same physical memory.</p>
+<h3 id="请你说一说死锁发生的条件以及如何解决死锁"><a href="#请你说一说死锁发生的条件以及如何解决死锁" class="headerlink" title="请你说一说死锁发生的条件以及如何解决死锁"></a>请你说一说死锁发生的条件以及如何解决死锁</h3>
       
 
       
@@ -1282,6 +1296,10 @@
 
   
   
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
+  
 
 
           </div>
@@ -1374,14 +1392,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -1390,11 +1400,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1407,14 +1433,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cmd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">
