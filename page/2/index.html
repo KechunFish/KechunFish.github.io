@@ -48,7 +48,7 @@
 		  <h1 class="header-author"><a href="/">顾可纯 Kechun</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Jacobs University Bremen. Expect to graduate in 2020.</p>
+		<p class="header-subtitle">Jacobs University Bremen</p>
 		
 
 		<nav class="header-menu">
@@ -100,7 +100,7 @@
 			  <h1 class="header-author js-header-author">顾可纯 Kechun</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Jacobs University Bremen. Expect to graduate in 2020.<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Jacobs University Bremen<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -159,7 +159,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p><a href="https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032" target="_blank" rel="noopener">https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032</a><br>（1）递归查询<br>递归查询是一种DNS 服务器的查询模式，在该模式下DNS 服务器接收到客户机请求，必须使用一个准确的查询结果回复客户机。如果DNS 服务器本地没有存储查询DNS 信息，那么该服务器会询问其他服务器，并将返回的查询结果提交给客户机。<br>（2）迭代查询<br>DNS 服务器另外一种查询方式为迭代查询，DNS 服务器会向客户机提供其他能够解析查询请求的DNS 服务器地址，当客户机发送查询请求时，DNS 服务器并不直接回复查询结果，而是告诉客户机另一台DNS 服务器地址，客户机再向这台DNS服务器提交请求，依次循环直到返回查询的结果为止。</p>
+<h3 id="拥塞窗口-cwnd"><a href="#拥塞窗口-cwnd" class="headerlink" title="拥塞窗口, cwnd"></a>拥塞窗口, cwnd</h3><p>快重传和快恢复</p>
+<h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>网络层等到数据链层用mac地址作为通信目标，数据包到达网络等准备往数据链层发送的时候，首先会去自己的arp缓存表(存着ip-mac对应关系)去查找改目标ip的mac地址，如果查到了，就讲目标ip的mac地址封装到链路层数据包的包头。如果缓存中没有找到，会发起一个广播：who is ip XXX tell ip XXX,所有收到的广播的机器看这个ip是不是自己的，如果是自己的，则以单拨的形式将自己的mac地址回复给请求的机器</p>
+<h3 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h3><p>发送，传播，处理，排队</p>
+<h3 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h3><p>发送方 调制器，接收方， 解调器<br>频分复用(Frequency Division multiplexing)<br>时分复用(Time Division multiplexing)</p>
+<h3 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h3><p>点对点信道，广播信道<br>1)PPP协议, CSMA/CD协议<br>2)封装成帧，透明传输，差错检测<br>3)MAC<br>4)适配器，转发器，集线器，网桥，以太网交换机</p>
+<p>封装成帧：互联网上传输的数据都是以分组(IP数据报)为传送单位，网络层的IP数据报传送到数据链路层就成为帧的数据部分，在数据部分的前面和后面分别添加首部，尾部，构成一个完整的帧<br>MTU(Maximum Transfer Unit)，数据链路层可以负载的数据部分的最大程度，不是帧的总长度<br>SOH(start of Heaader)放在帧的首部开始，EOT(End of Transmission)表示帧的结束</p>
+<p>透明传输：数据部分不会出现SOH或EOT这样的帧定界控制字符，从键盘上输入的任何字符都可以放入帧中传输，这就是透明传输<br>如果出现像SOH或EOT，在这个字符前面加入转义字符ESC，接收端会在送往网络层之前会自动删除</p>
+<p>CRC检查(这是一种检查方法)，在数据后面添加供差错检测用的n位数字，被叫做帧检验序列冗(rong)余码FCS(Frame Check Sequence)</p>
+<p>总线网最有名<br>集线器(hub)</p>
+<h5 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h5><p>点对点协议(Point-to-Point Protocol),PPP是用户计算机和ISP进行通信时所使用的数据链路层协议<br>CRC检测<br>支持 简单，封装成帧，透明性，多种网络层协议(在同一条物理链路层上同时支持多种网络层协议)，多种类型链路</p>
+<p>1) 将IP数据报封装到串行链路的方法，支持异步链路和同步链路<br>2）建立，配置和测试数据链路连接 链路控制协议LCP(Link Control Protocol)<br>3) 网络控制协议NCP(Network Control Protocol)，每一个协议支持不同的网络层协议，比如IP，OSI</p>
+<p>各段的意义在page79</p>
+<h3 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h3><p>在同一时间只能允许一台计算机发送数据<br>载波监听多点接入/碰撞检测</p>
+<p>1) 多点接入，<br>2) 载波监听，发送前，发送中，每个站都必须不停的检测通道<br>3) 碰撞检测，一旦发现总线上出现了碰撞，其适配器就要立即停止发送，等待一段随机事件后再次发送<br>最迟要经过过两倍的总线端到端的传播时延， 每一个站在自己发送数据之后的一小段时间内都有碰撞的可能性。<br>两倍的总线端到端的往返时间为争用期，过了争用期才能确定无碰撞。<br>使用截断二进制指数退避来确定碰撞后重传的时间，发生碰撞的站在推迟一个随机的时间在重新发送数据，如果多次碰撞，动态退避(长度小于64字节的帧都是有欲重读儿异常终止的无效帧)<br>强化碰撞，当发现了碰撞，立即停止发送数据外还在继续发送32bit或者48的认为干扰信号，让所有用户都知道有了碰撞<br>如果主机间隔太原则无法正常工作</p>
+<h3 id="hub-集线器"><a href="#hub-集线器" class="headerlink" title="hub,集线器"></a>hub,集线器</h3><p>使用的还是CSMA/CD,<br>简单的转发bit</p>
+<h3 id="bridge，网桥"><a href="#bridge，网桥" class="headerlink" title="bridge，网桥"></a>bridge，网桥</h3><p>对收到的帧根据MAC的目的地进行转发和过滤，当收到一个帧，并不是想所有的借口转发此帧，而是根据此帧的MAC地址，查找网桥中的地址表，然后确定发送到哪一个接口或者丢弃<br>用网桥互联的只能由一个<em>网络号</em></p>
+<h3 id="以太网交换机-switch"><a href="#以太网交换机-switch" class="headerlink" title="以太网交换机(switch)"></a>以太网交换机(switch)</h3><p>多接口的网桥，<br>独占传输媒体，无碰撞的传输数据，在端口繁忙的时候把到来的帧惊醒缓存，<br>帧交换表，通过子学习算法逐渐建立的(MAC地址，接口)表<br>路由器可以在不同时间内把一个IP分配给多台主机使用。交换机是通过MAC地址和识别各个不同的主机。</p>
+<h3 id="VLAN-虚拟局域网"><a href="#VLAN-虚拟局域网" class="headerlink" title="VLAN 虚拟局域网"></a>VLAN 虚拟局域网</h3><p>逻辑组合，VLAN标识符ID</p>
+<h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><p>互联网上传输的数据都是以分组(IP数据报)为传送单位，<br>逻辑互联网络<br>网络层不提供服务质量的承诺，向上提供简单灵活的，无连接的，尽最大努力交付的数据报服务</p>
+<p>1) 主机1先查找自己的路由表，看在不在自己的本网络上，如果在就直接交付<br>2) 不在，把IP数据报发送给某个路由器，R1查找了自己的路由表后，转发给R2进行简介交付,一直到最终在同一个网络上进行直接交付<br>IP地址管理机构只分配网络号，剩下的主机号自行分配，用转发器或网桥连接起来的仍是一个网络</p>
+<p>当IP数据报的总长度不能超过链路层的MTU</p>
+<h3 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h3><p><a href="https://www.youtube.com/watch?v=cn8Zxh9bPio&amp;t=123s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=cn8Zxh9bPio&amp;t=123s</a><br><em>ARP的MAC寻址还是局限在同一个子网中，因此网络层引入了路由协议，首先通过IP协议来判断两台主机是否在同一个子网中，如果在同一个子网，就通过ARP协议查询对应的MAC地址，然后以广播的形式向该子网内的主机发送数据包；</em></p>
+<p>devices need the MAC address for communication on a local area network.<br>MAC address is what identifies the actual devices</p>
+<p>1) first look at its internal list, ARP cache, to see the computer B’s ip adrress matches the MAC address<br>2) send broadcast to all computers in the local network to ask which computer has specific ip address for their mac address (then respond, then transfer, store in ARP cache)<br>ARP : Internet addresss, physical addresss, type</p>
+<p>1) dynamic entry is created automatically when a device sends out a broadcast message out on the network. not permanent, flushed out periodicly<br>2) static entry is where someone manually enters an ip to mac address association using the arp command line, reduce the traffic</p>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>生存时间 TTL(Time to Live)跳数<br>IP ::= {&lt;网络号&gt;,&lt;子网号&gt;,&lt;主机号&gt;}</p>
+<h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><p>网络层<br>路由表(目的网络地址，下一跳地址(默认端口，或者下一跳的地址))，知道去重点的下一站的端口</p>
+
       
 
       
@@ -167,6 +195,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">复习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Network</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -201,19 +244,19 @@
 
 
   
-    <article id="post-C-混乱总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-什么都有" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/05/C-%E6%B7%B7%E4%B9%B1%E6%80%BB%E7%BB%93/">C++混乱总结</a>
+      <a class="article-title" href="/2020/03/05/%E4%BB%80%E4%B9%88%E9%83%BD%E6%9C%89/">什么都有</a>
     </h1>
   
 
         
-        <a href="/2020/03/05/C-%E6%B7%B7%E4%B9%B1%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <a href="/2020/03/05/%E4%BB%80%E4%B9%88%E9%83%BD%E6%9C%89/" class="archive-article-date">
   	<time datetime="2020-03-05T14:26:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
 </a>
         
@@ -221,7 +264,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="a"><a href="#a" class="headerlink" title="a"></a>a</h3><p><a href="https://www.cnblogs.com/acge/p/10200601.html" target="_blank" rel="noopener">https://www.cnblogs.com/acge/p/10200601.html</a><br>面向对象程序设计将数据与对数据的操作放在一起，作为相互依存、不可分割的整体来处理<br>对象是属性和方法的封装体<br>友元函数不是类的成员函数<br>可以在类外引用对象的公有数据成员，而且还可以调用对象的公用成员函数，但必须指出对象名<br>如果为一个对象定义了一个引用变量，它们是共占同一段存储单元的，实际上它们是同一个对象不同的名字<br>访问对象的三种方法：通过对象名和成员运算符访问对象中的成员，通过指向对象的指针访问对象中的成员，通过对象的引用变量访问对象中的成员<br>类的作用是把数据和算法封装在用户的抽象数据类型中<br><em>在全局范围中定义的对象（即在所以函数之外定义的对象），它的构造函数在文件中的所有函数（包括main函数）执行之前调用</em><br><em>构造函数和析构函数是不能从基类继承的</em><br><em>静态数据成员是所有对象所共有的</em><br><em>如果已经定义了一个常对象，只能调用其中的const成员函数，不能调用非const函数</em><br><em>在类的非静态函数中this指针指向调用该函数的对象</em><br><em>一个派生类可以从一个基类派生，也可以从多个基类派生</em><br><em>不同的成员函数，只有在函数名和参数个数相同、类型相匹配的情况下才发生同名覆盖，如果只有函数名相同而参数不同，不会发生同名覆盖，而属于函数重载。</em></p>
+<p><em>C++的三大特性 OOP具有三大特性：封装性、继承性和多态性。</em></p>
+<h3 id="new-malloc"><a href="#new-malloc" class="headerlink" title="new malloc"></a>new malloc</h3><p><a href="https://www.cnblogs.com/tp-16b/p/8684298.html?" target="_blank" rel="noopener">https://www.cnblogs.com/tp-16b/p/8684298.html?</a><br><a href="https://segmentfault.com/a/1190000016128411" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016128411</a><br><a href="https://www.cnblogs.com/wangjian8888/p/7905176.html" target="_blank" rel="noopener">https://www.cnblogs.com/wangjian8888/p/7905176.html</a></p>
+<h3 id="tcp心跳"><a href="#tcp心跳" class="headerlink" title="tcp心跳"></a>tcp心跳</h3><p><a href="https://blog.csdn.net/pmt123456/article/details/58233999" target="_blank" rel="noopener">https://blog.csdn.net/pmt123456/article/details/58233999</a></p>
+<h3 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h3><h3 id="tcp"><a href="#tcp" class="headerlink" title="tcp"></a>tcp</h3><h3 id="基本算法的实现"><a href="#基本算法的实现" class="headerlink" title="基本算法的实现"></a>基本算法的实现</h3><h3 id="读写锁知道吗"><a href="#读写锁知道吗" class="headerlink" title="读写锁知道吗"></a>读写锁知道吗</h3><h3 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h3><h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><h3 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h3><p><a href="https://www.nowcoder.com/discuss/374698" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/374698</a></p>
+<h3 id="epoll-select-poll区别"><a href="#epoll-select-poll区别" class="headerlink" title="epoll select poll区别"></a>epoll select poll区别</h3><p>!!!!!!<a href="https://www.cnblogs.com/aspirant/p/9166944.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspirant/p/9166944.html</a></p>
+<h3 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h3><p>特殊内存，应用程序和kernel共享的<br>事件通知<br>I/O多路复用(又被称为“事件驱动<br><a href="https://www.zhihu.com/question/28594409" target="_blank" rel="noopener">https://www.zhihu.com/question/28594409</a><br><a href="https://www.cnblogs.com/aspirant/p/9166944.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspirant/p/9166944.html</a></p>
+<h3 id="能否用memcmp比较-struct中成员"><a href="#能否用memcmp比较-struct中成员" class="headerlink" title="能否用memcmp比较 struct中成员"></a>能否用memcmp比较 struct中成员</h3><h3 id="内存对齐"><a href="#内存对齐" class="headerlink" title="内存对齐"></a>内存对齐</h3><h3 id="循环展开"><a href="#循环展开" class="headerlink" title="循环展开"></a>循环展开</h3><h3 id="股票问题-（-1-3-5-7-2-3-是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）"><a href="#股票问题-（-1-3-5-7-2-3-是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）" class="headerlink" title="股票问题 （[1 3 5 7 2 3 ]是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）"></a>股票问题 （[1 3 5 7 2 3 ]是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）</h3><h3 id="shared-ptr的循环引用问题s"><a href="#shared-ptr的循环引用问题s" class="headerlink" title="shared_ptr的循环引用问题s"></a>shared_ptr的循环引用问题s</h3><h3 id="系统调用、什么时候会阻塞，具体情况"><a href="#系统调用、什么时候会阻塞，具体情况" class="headerlink" title="系统调用、什么时候会阻塞，具体情况"></a>系统调用、什么时候会阻塞，具体情况</h3><h3 id="new失败后会抛出什么异常，怎么样避免抛出异常"><a href="#new失败后会抛出什么异常，怎么样避免抛出异常" class="headerlink" title="new失败后会抛出什么异常，怎么样避免抛出异常"></a>new失败后会抛出什么异常，怎么样避免抛出异常</h3><h3 id="几亿个数字，如何找出前k大的数字"><a href="#几亿个数字，如何找出前k大的数字" class="headerlink" title="几亿个数字，如何找出前k大的数字"></a>几亿个数字，如何找出前k大的数字</h3><p><a href="https://blog.csdn.net/suibianshen2012/article/details/52003082" target="_blank" rel="noopener">https://blog.csdn.net/suibianshen2012/article/details/52003082</a></p>
+<h3 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h3><p><a href="https://www.tutorialspoint.com/unix_sockets/what_is_socket.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/unix_sockets/what_is_socket.htm</a><br>Sockets allow communication between two different processes on the same or different machines. To be more precise, it’s a way to talk to other computers using standard Unix file descriptors. In Unix, every I/O action is done by writing or reading a file descriptor. A file descriptor is just an integer associated with an open file and it can be a network connection, a text file, a terminal, or something else.</p>
+<h3 id="事件通知"><a href="#事件通知" class="headerlink" title="事件通知"></a>事件通知</h3><h3 id="http"><a href="#http" class="headerlink" title="http"></a>http</h3><h3 id="同步I-O"><a href="#同步I-O" class="headerlink" title="同步I/O"></a>同步I/O</h3><h3 id="IP-MAC"><a href="#IP-MAC" class="headerlink" title="IP MAC"></a>IP MAC</h3><p>ip不变，mac变<br>以太网规协议定，接入网络的设备都必须安装网络适配器，即网卡， 数据包必须是从一块网卡传送到另一块网卡。而网卡地址就是数据包的发送地址和接收地址，也就是帧首部所包含的MAC地址，MAC地址是每块网卡的身份标识，就如同我们身份证上的身份证号码，具有全球唯一性。MAC地址采用十六进制标识，共6个字节， 前三个字节是厂商编号，后三个字节是网卡流水号，例如 4C-0F-6E-12-D2-19</p>
+<h3 id="delete"><a href="#delete" class="headerlink" title="delete[]"></a>delete[]</h3><p><a href="https://www.cnblogs.com/wangjian8888/p/7905176.html" target="_blank" rel="noopener">https://www.cnblogs.com/wangjian8888/p/7905176.html</a><br><a href="https://segmentfault.com/a/1190000016128411" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016128411</a></p>
+<h3 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h3><p><a href="https://blog.csdn.net/qq_34638435/article/details/81878301" target="_blank" rel="noopener">https://blog.csdn.net/qq_34638435/article/details/81878301</a></p>
+<h3 id="epoll为什么要配合非阻塞IO"><a href="#epoll为什么要配合非阻塞IO" class="headerlink" title="epoll为什么要配合非阻塞IO"></a>epoll为什么要配合非阻塞IO</h3><h3 id="new-amp-malloc"><a href="#new-amp-malloc" class="headerlink" title="new &amp; malloc"></a>new &amp; malloc</h3><p>!!!<a href="https://www.cnblogs.com/shilinnpu/p/8945637.html" target="_blank" rel="noopener">https://www.cnblogs.com/shilinnpu/p/8945637.html</a></p>
+<h3 id="file-descriptor"><a href="#file-descriptor" class="headerlink" title="file descriptor"></a>file descriptor</h3><p><a href="https://www.youtube.com/watch?v=EqndHT606Tw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=EqndHT606Tw</a><br>savestdin = dup(0)<br>duplicate to the lowest free file descriptor</p>
+<p>dup2(savestdin, 0)<br>back to 0</p>
+<h3 id="return-amp-amp-exit"><a href="#return-amp-amp-exit" class="headerlink" title="return &amp;&amp; exit"></a>return &amp;&amp; exit</h3><p><a href="https://blog.csdn.net/lchunli/article/details/4786513" target="_blank" rel="noopener">https://blog.csdn.net/lchunli/article/details/4786513</a></p>
+<h3 id="深入浅出-TCP-IP-协议栈"><a href="#深入浅出-TCP-IP-协议栈" class="headerlink" title="深入浅出 TCP/IP 协议栈"></a>深入浅出 TCP/IP 协议栈</h3><p>!!!<a href="https://www.cnblogs.com/onepixel/p/7092302.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/p/7092302.html</a></p>
+<h3 id="ip"><a href="#ip" class="headerlink" title="ip"></a>ip</h3><p>通过ISP获得IP<br>local里的computer用MAC，网络间的用IP<br><a href="https://pc.net/helpcenter/answers/sharing_the_same_ip_address" target="_blank" rel="noopener">https://pc.net/helpcenter/answers/sharing_the_same_ip_address</a><br>如果两个IP地址在同一个子网内，则网络地址一定相同。为了判断IP地址中的网络地址，IP协议还引入了子网掩码， IP地址和子网掩码通过按位与运算后就可以得到网络地址。<br>网络层引入了IP协议，制定了一套新地址，使得我们能够区分两台主机是否同属一个网络，这套地址就是网络地址，也就是所谓的IP地址。<br><em>When you use the Internet, your internal IP address is hidden and only your external IP address is seen by other computers on the Internet. This IP address is provided by your ISP and is assigned to the device that your modem is connected to, which is typically your router. Therefore, all devices connected to the router (whether wired or wirelessly) will share the same external IP address.</em></p>
+<h3 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h3><p><a href="https://www.youtube.com/watch?v=cn8Zxh9bPio&amp;t=123s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=cn8Zxh9bPio&amp;t=123s</a><br><em>ARP的MAC寻址还是局限在同一个子网中，因此网络层引入了路由协议，首先通过IP协议来判断两台主机是否在同一个子网中，如果在同一个子网，就通过ARP协议查询对应的MAC地址，然后以广播的形式向该子网内的主机发送数据包；</em></p>
+<p>devices need the MAC address for communication on a local area network.<br>MAC address is what identifies the actual devices</p>
+<p>1) first look at its internal list, ARP cache, to see the computer B’s ip adrress matches the MAC address<br>2) send broadcast to all computers in the local network to ask which computer has specific ip address for their mac address (then respond, then transfer, store in ARP cache)<br>ARP : Internet addresss, physical addresss, type</p>
+<p>1) dynamic entry is created automatically when a device sends out a broadcast message out on the network. not permanent, flushed out periodicly<br>2) static entry is where someone manually enters an ip to mac address association using the arp command line, reduce the traffic</p>
+<h3 id="拓扑结构"><a href="#拓扑结构" class="headerlink" title="拓扑结构"></a>拓扑结构</h3><p>Network Topology<br>总线型拓扑、星形拓扑、环形拓扑、树形拓扑（由总线型演变而来）以及它们的混合型</p>
+<h3 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h3><p>动态路由协议有自己的路由算法，能够自动适应网络拓扑的变化，适用于具有一定数量三层设备的网络<br><a href="https://blog.csdn.net/w123567890/article/details/22385801?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/w123567890/article/details/22385801?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
+<h4 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h4><p>Routing Information Protocol<br>它是一种较为简单的内部网关协议IGP（Interior Gateway Protocol），主要用于规模较小的网络中，比如校园网以及结构较简单的地区性网络。对于更为复杂的环境和大型网络，一般不使用RIP。<br>RIP是一种基于距离矢量（Distance-Vector）算法的协议，它通过UDP报文进行路由信息的交换，使用的端口号为520。<br>RIP使用跳数（Hop Count）来衡量到达目的地址的距离，称为度量值。在RIP中，缺省情况下，路由器到与它直接相连网络的跳数为0，通过一个路由器可达的网络的跳数为1，其余依此类推。也就是说，度量值等于从本网络到达目的网络间的路由器数量。为限制收敛时间，RIP规定度量值取0～15之间的整数，大于或等于16的跳数被定义为无穷大，即目的网络或主机不可达。由于这个限制，使得RIP不可能在大型网络中得到应用。<br>分V1， V2</p>
+<h4 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h4><p>Open Shortest Path First<br>是IETF组织开发的一个基于链路状态的内部网关协议</p>
+
       
 
       
@@ -234,7 +303,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">复习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -248,7 +317,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/05/C-%E6%B7%B7%E4%B9%B1%E6%80%BB%E7%BB%93/">Show all >></a>
+          <a class="article-more-a" href="/2020/03/05/%E4%BB%80%E4%B9%88%E9%83%BD%E6%9C%89/">Show all >></a>
         </p>
       
 
@@ -371,7 +440,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -391,23 +476,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -416,6 +485,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cmd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">

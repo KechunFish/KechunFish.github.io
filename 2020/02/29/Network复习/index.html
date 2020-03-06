@@ -8,12 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Network复习 | Kechuno 顾可纯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="DNShttps:&#x2F;&#x2F;blog.csdn.net&#x2F;yanbaohttps:&#x2F;&#x2F;blog.csdn.net&#x2F;yanbao4070&#x2F;article&#x2F;details&#x2F;798920324070&#x2F;article&#x2F;details&#x2F;79892032（1）递归查询递归查询是一种DNS 服务器的查询模式，在该模式下DNS 服务器接收到客户机请求，必须使用一个准确的查询结果回复客户机。如果DNS 服务器本地没有存储查">
+<meta name="keywords" content="复习,Network">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Network复习">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;29&#x2F;Network%E5%A4%8D%E4%B9%A0&#x2F;index.html">
 <meta property="og:site_name" content="Kechuno 顾可纯">
+<meta property="og:description" content="DNShttps:&#x2F;&#x2F;blog.csdn.net&#x2F;yanbaohttps:&#x2F;&#x2F;blog.csdn.net&#x2F;yanbao4070&#x2F;article&#x2F;details&#x2F;798920324070&#x2F;article&#x2F;details&#x2F;79892032（1）递归查询递归查询是一种DNS 服务器的查询模式，在该模式下DNS 服务器接收到客户机请求，必须使用一个准确的查询结果回复客户机。如果DNS 服务器本地没有存储查">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-29T14:53:35.680Z">
+<meta property="og:updated_time" content="2020-03-06T15:29:55.218Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kechuno 顾可纯" type="application/atom+xml">
@@ -49,7 +52,7 @@
 		  <h1 class="header-author"><a href="/">顾可纯 Kechun</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Jacobs University Bremen. Expect to graduate in 2020.</p>
+		<p class="header-subtitle">Jacobs University Bremen</p>
 		
 
 		<nav class="header-menu">
@@ -101,7 +104,7 @@
 			  <h1 class="header-author js-header-author">顾可纯 Kechun</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Jacobs University Bremen. Expect to graduate in 2020.<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Jacobs University Bremen<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -158,7 +161,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p><a href="https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032" target="_blank" rel="noopener">https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032</a><br>（1）递归查询<br>递归查询是一种DNS 服务器的查询模式，在该模式下DNS 服务器接收到客户机请求，必须使用一个准确的查询结果回复客户机。如果DNS 服务器本地没有存储查询DNS 信息，那么该服务器会询问其他服务器，并将返回的查询结果提交给客户机。<br>（2）迭代查询<br>DNS 服务器另外一种查询方式为迭代查询，DNS 服务器会向客户机提供其他能够解析查询请求的DNS 服务器地址，当客户机发送查询请求时，DNS 服务器并不直接回复查询结果，而是告诉客户机另一台DNS 服务器地址，客户机再向这台DNS服务器提交请求，依次循环直到返回查询的结果为止。</p>
+<h3 id="拥塞窗口-cwnd"><a href="#拥塞窗口-cwnd" class="headerlink" title="拥塞窗口, cwnd"></a>拥塞窗口, cwnd</h3><p>快重传和快恢复</p>
+<h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>网络层等到数据链层用mac地址作为通信目标，数据包到达网络等准备往数据链层发送的时候，首先会去自己的arp缓存表(存着ip-mac对应关系)去查找改目标ip的mac地址，如果查到了，就讲目标ip的mac地址封装到链路层数据包的包头。如果缓存中没有找到，会发起一个广播：who is ip XXX tell ip XXX,所有收到的广播的机器看这个ip是不是自己的，如果是自己的，则以单拨的形式将自己的mac地址回复给请求的机器</p>
+<h3 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h3><p>发送，传播，处理，排队</p>
+<h3 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h3><p>发送方 调制器，接收方， 解调器<br>频分复用(Frequency Division multiplexing)<br>时分复用(Time Division multiplexing)</p>
+<h3 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h3><p>点对点信道，广播信道<br>1)PPP协议, CSMA/CD协议<br>2)封装成帧，透明传输，差错检测<br>3)MAC<br>4)适配器，转发器，集线器，网桥，以太网交换机</p>
+<p>封装成帧：互联网上传输的数据都是以分组(IP数据报)为传送单位，网络层的IP数据报传送到数据链路层就成为帧的数据部分，在数据部分的前面和后面分别添加首部，尾部，构成一个完整的帧<br>MTU(Maximum Transfer Unit)，数据链路层可以负载的数据部分的最大程度，不是帧的总长度<br>SOH(start of Heaader)放在帧的首部开始，EOT(End of Transmission)表示帧的结束</p>
+<p>透明传输：数据部分不会出现SOH或EOT这样的帧定界控制字符，从键盘上输入的任何字符都可以放入帧中传输，这就是透明传输<br>如果出现像SOH或EOT，在这个字符前面加入转义字符ESC，接收端会在送往网络层之前会自动删除</p>
+<p>CRC检查(这是一种检查方法)，在数据后面添加供差错检测用的n位数字，被叫做帧检验序列冗(rong)余码FCS(Frame Check Sequence)</p>
+<p>总线网最有名<br>集线器(hub)</p>
+<h5 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h5><p>点对点协议(Point-to-Point Protocol),PPP是用户计算机和ISP进行通信时所使用的数据链路层协议<br>CRC检测<br>支持 简单，封装成帧，透明性，多种网络层协议(在同一条物理链路层上同时支持多种网络层协议)，多种类型链路</p>
+<p>1) 将IP数据报封装到串行链路的方法，支持异步链路和同步链路<br>2）建立，配置和测试数据链路连接 链路控制协议LCP(Link Control Protocol)<br>3) 网络控制协议NCP(Network Control Protocol)，每一个协议支持不同的网络层协议，比如IP，OSI</p>
+<p>各段的意义在page79</p>
+<h3 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h3><p>在同一时间只能允许一台计算机发送数据<br>载波监听多点接入/碰撞检测</p>
+<p>1) 多点接入，<br>2) 载波监听，发送前，发送中，每个站都必须不停的检测通道<br>3) 碰撞检测，一旦发现总线上出现了碰撞，其适配器就要立即停止发送，等待一段随机事件后再次发送<br>最迟要经过过两倍的总线端到端的传播时延， 每一个站在自己发送数据之后的一小段时间内都有碰撞的可能性。<br>两倍的总线端到端的往返时间为争用期，过了争用期才能确定无碰撞。<br>使用截断二进制指数退避来确定碰撞后重传的时间，发生碰撞的站在推迟一个随机的时间在重新发送数据，如果多次碰撞，动态退避(长度小于64字节的帧都是有欲重读儿异常终止的无效帧)<br>强化碰撞，当发现了碰撞，立即停止发送数据外还在继续发送32bit或者48的认为干扰信号，让所有用户都知道有了碰撞<br>如果主机间隔太原则无法正常工作</p>
+<h3 id="hub-集线器"><a href="#hub-集线器" class="headerlink" title="hub,集线器"></a>hub,集线器</h3><p>使用的还是CSMA/CD,<br>简单的转发bit</p>
+<h3 id="bridge，网桥"><a href="#bridge，网桥" class="headerlink" title="bridge，网桥"></a>bridge，网桥</h3><p>对收到的帧根据MAC的目的地进行转发和过滤，当收到一个帧，并不是想所有的借口转发此帧，而是根据此帧的MAC地址，查找网桥中的地址表，然后确定发送到哪一个接口或者丢弃<br>用网桥互联的只能由一个<em>网络号</em></p>
+<h3 id="以太网交换机-switch"><a href="#以太网交换机-switch" class="headerlink" title="以太网交换机(switch)"></a>以太网交换机(switch)</h3><p>多接口的网桥，<br>独占传输媒体，无碰撞的传输数据，在端口繁忙的时候把到来的帧惊醒缓存，<br>帧交换表，通过子学习算法逐渐建立的(MAC地址，接口)表<br>路由器可以在不同时间内把一个IP分配给多台主机使用。交换机是通过MAC地址和识别各个不同的主机。</p>
+<h3 id="VLAN-虚拟局域网"><a href="#VLAN-虚拟局域网" class="headerlink" title="VLAN 虚拟局域网"></a>VLAN 虚拟局域网</h3><p>逻辑组合，VLAN标识符ID</p>
+<h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><p>互联网上传输的数据都是以分组(IP数据报)为传送单位，<br>逻辑互联网络<br>网络层不提供服务质量的承诺，向上提供简单灵活的，无连接的，尽最大努力交付的数据报服务</p>
+<p>1) 主机1先查找自己的路由表，看在不在自己的本网络上，如果在就直接交付<br>2) 不在，把IP数据报发送给某个路由器，R1查找了自己的路由表后，转发给R2进行简介交付,一直到最终在同一个网络上进行直接交付<br>IP地址管理机构只分配网络号，剩下的主机号自行分配，用转发器或网桥连接起来的仍是一个网络</p>
+<p>当IP数据报的总长度不能超过链路层的MTU</p>
+<h3 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h3><p><a href="https://www.youtube.com/watch?v=cn8Zxh9bPio&amp;t=123s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=cn8Zxh9bPio&amp;t=123s</a><br><em>ARP的MAC寻址还是局限在同一个子网中，因此网络层引入了路由协议，首先通过IP协议来判断两台主机是否在同一个子网中，如果在同一个子网，就通过ARP协议查询对应的MAC地址，然后以广播的形式向该子网内的主机发送数据包；</em></p>
+<p>devices need the MAC address for communication on a local area network.<br>MAC address is what identifies the actual devices</p>
+<p>1) first look at its internal list, ARP cache, to see the computer B’s ip adrress matches the MAC address<br>2) send broadcast to all computers in the local network to ask which computer has specific ip address for their mac address (then respond, then transfer, store in ARP cache)<br>ARP : Internet addresss, physical addresss, type</p>
+<p>1) dynamic entry is created automatically when a device sends out a broadcast message out on the network. not permanent, flushed out periodicly<br>2) static entry is where someone manually enters an ip to mac address association using the arp command line, reduce the traffic</p>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>生存时间 TTL(Time to Live)跳数<br>IP ::= {&lt;网络号&gt;,&lt;子网号&gt;,&lt;主机号&gt;}</p>
+<h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><p>网络层<br>路由表(目的网络地址，下一跳地址(默认端口，或者下一跳的地址))，知道去重点的下一站的端口</p>
+
       
 
       
@@ -166,6 +197,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">复习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Network</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -179,11 +225,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/05/C-%E6%B7%B7%E4%B9%B1%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/05/%E4%BB%80%E4%B9%88%E9%83%BD%E6%9C%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          C++混乱总结
+          什么都有
         
       </div>
     </a>
@@ -217,7 +263,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    false
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS"><span class="toc-number">1.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拥塞窗口-cwnd"><span class="toc-number">2.</span> <span class="toc-text">拥塞窗口, cwnd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP"><span class="toc-number">3.</span> <span class="toc-text">ARP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时延"><span class="toc-number">4.</span> <span class="toc-text">时延</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#物理层"><span class="toc-number">5.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据链路层"><span class="toc-number">6.</span> <span class="toc-text">数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PPP"><span class="toc-number">6.0.1.</span> <span class="toc-text">PPP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSMA-CD协议"><span class="toc-number">7.</span> <span class="toc-text">CSMA/CD协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hub-集线器"><span class="toc-number">8.</span> <span class="toc-text">hub,集线器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bridge，网桥"><span class="toc-number">9.</span> <span class="toc-text">bridge，网桥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#以太网交换机-switch"><span class="toc-number">10.</span> <span class="toc-text">以太网交换机(switch)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLAN-虚拟局域网"><span class="toc-number">11.</span> <span class="toc-text">VLAN 虚拟局域网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络层"><span class="toc-number">12.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP协议"><span class="toc-number">13.</span> <span class="toc-text">ARP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP"><span class="toc-number">14.</span> <span class="toc-text">IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由器"><span class="toc-number">15.</span> <span class="toc-text">路由器</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -325,7 +371,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -345,23 +407,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -370,6 +416,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Cmd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
