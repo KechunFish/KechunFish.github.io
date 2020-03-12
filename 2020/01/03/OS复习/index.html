@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Kechuno 顾可纯">
 <meta property="og:description" content="用的是现代操作系统（第四版） pipe管道主要包括无名管道和命名管道:管道可用于具有亲缘关系的父子进程间的通信，有名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信  traditional pipe is “unnamed” and lasts only as long as the process. A named pipe, however, can last as long">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-05T15:01:36.309Z">
+<meta property="og:updated_time" content="2020-03-11T13:24:48.566Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kechuno 顾可纯" type="application/atom+xml">
@@ -171,7 +171,32 @@
 <h3 id="file-descriptor"><a href="#file-descriptor" class="headerlink" title="file descriptor"></a>file descriptor</h3><h3 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h3><p>###<br>在使用虚拟内存的情况下，写时复制（Copy-On-Write）是以页为基础进行的</p>
 <p><a href="https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/#reading_17_concurrency" target="_blank" rel="noopener">https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/#reading_17_concurrency</a></p>
 <h3 id="shared-memory"><a href="#shared-memory" class="headerlink" title="shared memory"></a>shared memory</h3><p>A and B might be two processors (or processor cores) in the same computer, sharing the same physical memory.</p>
-<h3 id="请你说一说死锁发生的条件以及如何解决死锁"><a href="#请你说一说死锁发生的条件以及如何解决死锁" class="headerlink" title="请你说一说死锁发生的条件以及如何解决死锁"></a>请你说一说死锁发生的条件以及如何解决死锁</h3>
+<h3 id="请你说一说死锁发生的条件以及如何解决死锁"><a href="#请你说一说死锁发生的条件以及如何解决死锁" class="headerlink" title="请你说一说死锁发生的条件以及如何解决死锁"></a>请你说一说死锁发生的条件以及如何解决死锁</h3><p>!!!<a href="https://www.jianshu.com/p/1d47ed0b46d5?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation" target="_blank" rel="noopener">https://www.jianshu.com/p/1d47ed0b46d5?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation</a></p>
+<h3 id="三态模型"><a href="#三态模型" class="headerlink" title="三态模型"></a>三态模型</h3><p>运行态：进程占用CPU正在运行。<br>就绪态：进程具备了运行的条件（已获得除CPU以外的所需资源），但因其他进程正在运行而暂时停止，等待系统分配处理器以便运行。<br>等待态/阻塞态：进程不具备运行条件，正在等待某个事件的完成。<br>状态转换：</p>
+<p>就绪 -&gt; 运行：调度进程为其分配处理机<br>运行 -&gt; 就绪：时间片用完；或出现更高优先级进程，当前进程被迫让出处理器。<br>运行 -&gt; 等待：正在执行的进程因等待某种事件发生而无法继续执行时，申请临界资源而未被满足，如 IO 请求（等待 I/O 完成）或者申请缓存<br>等待 -&gt; 就绪：请求得到满足（等待的事件已经发生），如 IO 完成</p>
+<h3 id="为什么引入（多）线程"><a href="#为什么引入（多）线程" class="headerlink" title="为什么引入（多）线程"></a>为什么引入（多）线程</h3><p>并行实体共享同一个地址空间和所有可用数据。<br>线程比进程更轻量级，它们比进程更容易、更快地撤销。<br>同一进程内的线程间切换比进程间的切换要快。<br>拥有多个线程允许这样活动彼此重叠进行，从而会加快应用程序执行速度。</p>
+<h3 id="进程与线程之间的关系"><a href="#进程与线程之间的关系" class="headerlink" title="进程与线程之间的关系"></a>进程与线程之间的关系</h3><p>一个程序至少有一个进程，一个线程只能属于一个进程，而一个进程可以有多个线程，但至少有一个线程（通常说的主线程）。<br>线程的划分尺度小于进程，使得多线程程序的并发性高<br>资源分配给进程，同一进程的所有线程共享该进程的所有资源。<br>线程在执行过程中，需要协作同步。不同进程的线程间要利用消息通信的办法实现同步。<br>处理机分给线程，即真正在处理机上运行的是线程。<br>线程是指进程内的一个执行单元，也是进程内的可调度实体。</p>
+<h3 id="进程与线程之间的区别"><a href="#进程与线程之间的区别" class="headerlink" title="进程与线程之间的区别"></a>进程与线程之间的区别</h3><p>调度：线程作为CPU调度和分配的基本单位，进程作为资源分配的基本单位。把传统进程的两个属性分开，线程便能轻装运行，从而可显著地提高系统的并发程度。在同一进程中，线程的切换不会引起进程的切换；在由一个进程中的线程切换到另一个进程中的线程时，才会引起进程的切换。<br>并发性：在引入线程的操作系统中，不仅进程之间可以并发执行，同一个进程的多个线程之间也可以并发执行。因而使操作系统具有更好的并发性，从而能更有效地使用系统资源和提高系统吞吐量。<br>拥有资源：进程是拥有资源的一个独立单位，它可以拥有自己的资源；而线程不拥有系统资源，只拥有一点在运行中必不可少的资源（如程序计数器，一组寄存器和栈），但可以访问隶属于同进程拥有的全部资源。</p>
+<p>子进程和父进程有不同的代码和数据空间，而多个线程则共享数据空间，每个线程有自己的执行堆栈和程序计数器为其执行上下文。</p>
+<p>系统开销：由于在创建或撤消进程时，系统都要为之分配或回收资源，在进程切换时，设计整个进程当前的CPU环境的保存以及新调度到进程的CPU环境的设置，而线程切换只需保存和设置少量寄存器内容，开销很小，而且进程内多个线程共享进程地址空间、多线程之间的同步与通信非常容易实现，甚至无需操作系统干预。因此，操作系统所付出的开销将显著地大于在创建或撤消线程时的开销。进程切换的开销也远大于线程切换的开销。</p>
+<h3 id="进程调度的方式"><a href="#进程调度的方式" class="headerlink" title="进程调度的方式"></a>进程调度的方式</h3><p>可抢占式（可剥夺式)：就绪队列中一旦有某进程的优先级高于当前正在执行的进程的优先级时，操作系统便立即进行进程调度，完成进程切换。<br>不可抢占式（不可剥夺式）：即使在就绪队列存在有某进程优先级高于当前正在执行的进程的优先级时，当前进程仍将占用处理机执行，直到该进程自己进入阻塞状态，或时间片用完，或在执行完系统调用后准备返回用户进程前的时刻，才重新发生调度让出处理机。</p>
+<h3 id="处理器调度层次"><a href="#处理器调度层次" class="headerlink" title="处理器调度层次"></a>处理器调度层次</h3><p>高级调度：作业调度，本质就是根据某种算法，把外存上的作业调入内存，并为之创建进程，挂入就绪队列，分配处理机并执行。执行完后，回收资源。<br>一般而言，批处理系统中才会有高级调度。</p>
+<p>中级调度：交换调度，本质就是让暂时不能运行的进程挂起，释放内存资源，并把它们调到外存上去等待。</p>
+<p>低级调度：进程调度，本质就是根据某种算法，把处理机分配给就绪进程队列中的某个进程。<br>进程调度首先会保存处理机现场。将程序计数器等指定寄存器中的内容保存到 PCB 中。然后将按照某种算法从就绪队列中选取进程，把处理机分配给进程。最后，把指定进程的 PCB 中的处理机现场信息恢复到处理机中，处理机分配给进程执行。</p>
+<h3 id="批处理系统"><a href="#批处理系统" class="headerlink" title="批处理系统"></a>批处理系统</h3><p>先来先服务算法（FCFS)：不可抢占调度方式，优点是公平，实现简单；缺点是不利于短作业。<br>最短作业优先算法（SJF）：不可抢占调度方式，有效地缩短进程的平均周转时间，提高系统的吞吐量，但不利于长进程的运行。<br>最短剩余时间优先算法（SRTF）：可抢占调度方式<br>最高响应比优先算法（HRRF）：介于先来先服务算法（只考虑了进程的等待时间）与最短进程优先算法（只考虑了用户估计的进程的执行时间）之间的一种折中算法。<br>根据 “响应比 =（进程执行时间 + 进程等待时间）/ 进程执行时间” 这个公式得到的响应比来进行调度。<br>高响应比优先算法在等待时间相同的情况下，作业执行的时间越短，响应比越高，满足段任务优先，同时响应比会随着等待时间增加而变大，优先级会提高，能够避免饥饿现象。优点是兼顾长短作业，缺点是计算响应比开销大，适用于批处理系统。</p>
+<p>交互式系统<br>优先级调度算法（HPF）：在进程等待队列中选择优先级最高的来执行。<br>轮转调度算法（RR）：抢占式调度，给每个进程固定的执行时间，根据进程到达的先后顺序让进程在单位时间片内执行，执行完成后便调度下一个进程执行，时间片轮转调度不考虑进程等待时间和执行时间。<br>多级反馈队列调度算法（MLFQ）：长进程无法长期占用处理机，且系统的响应时间会缩短，吞吐量也不错（前提是没有频繁的短进程）。所以 MLFQ 调度算法是一种合适不同类型应用特征的综合进程调度算法。<br>优点是兼顾长短作业，有较好的响应时间，可行性强，适用于各种作业环境；缺点是平均等待时间较长，</p>
+<h3 id="高级通信机制："><a href="#高级通信机制：" class="headerlink" title="高级通信机制："></a>高级通信机制：</h3><p>!!!<a href="https://www.jianshu.com/p/c1015f5ffa74" target="_blank" rel="noopener">https://www.jianshu.com/p/c1015f5ffa74</a><br>信号(signal)通信机制：信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。只能发送单个信号而不能传送数据。<br>管道(pipeline)通信机制<br>匿名管道(pipe)：管道是一种半双工的通信方式，数据只能单向流动，需要双向通信时需要建立起两个管道；而且只能在具有亲缘关系的进程间（父子进程关系）通信。<br>命名管道(FIFO)：有名管道也是半双工的通信方式，克服了管道没有名字的限制，它允许无亲缘关系进程间的通信。<br>消息传递(message passing)通信机制：消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。有足够权限的进程可以向队列中添加消息，被赋予读权限的进程则可以读走队列中的消息。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。<br>信号量(semaphore)通信机制：信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。<br>共享内存(shared memory)通信机制：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。<br>套接字(socket)通信机制：套解口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同及其间的进程通信。</p>
+<h3 id="死锁的概念"><a href="#死锁的概念" class="headerlink" title="死锁的概念"></a>死锁的概念</h3><p>死锁：当某进程提出资源申请后，使得系统中一些进程处于无休止的阻塞状态，在无外力作用下，永远不能再继续前进。</p>
+<p>产生死锁的根本原因：资源有限且操作不当。</p>
+<p>产生死锁的必要条件<br>互斥条件：某段时间内某资源只能由一个进程使用。<br>占有和等待条件：进程因请求资源而阻塞时，对已分配给它的资源保持不放。<br>不剥夺条件：资源在未使用完前，不能被剥夺，由使用进程释放。<br>循环等待条件：发生死锁时，有向图必构成一环路。</p>
+<p>解决死锁的方法<br>死锁防止：破坏四个条件<br>死锁避免：银行家算法<br>死锁的检测和恢复：死锁检测算法</p>
+<h3 id="多道程序设计中，进程间存在的制约关系有哪些？"><a href="#多道程序设计中，进程间存在的制约关系有哪些？" class="headerlink" title="多道程序设计中，进程间存在的制约关系有哪些？"></a>多道程序设计中，进程间存在的制约关系有哪些？</h3><p>同步：某一进程收不到另一进程给他的必要信息，就不能继续运行下去，这种制约关系源于进程间的合作。 互斥：某一进程要求使用某资源，而该资源正被另一进程使用，并且这以资源不许两进程同时使用，那么进程只好等占用资源进程释放资源后才能占有使用。</p>
+<h3 id="快表"><a href="#快表" class="headerlink" title="快表"></a>快表</h3><p>快表是一种特殊的高速缓冲存储器（Cache），内容是页表中的一部分或全部内容。 [1]<br>在操作系统中引入快表是为了加快地址映射速度。<br>在虚拟页式存储管理中设置了快表，作为当前进程页表的Cache。通常快表处于MMU中。</p>
+<p>什么是快表？它在地址转换中起什么作用？<br>快表是一个高速、具有并行查询能力的联想存储器，用于存放正运行的进程的当前页号和块号，或者段号和段起始地址。<br>加入快表后,在地址转换时，首先在快表中查找，若找到就直接进行地址转换；未找到，则在主存页表继续查找，并把查到的页号和块号放入联想存储器中。快表的命中率很高，有效地提高了地址转换的速度。</p>
+<h3 id="分段和分页"><a href="#分段和分页" class="headerlink" title="分段和分页"></a>分段和分页</h3><p><a href="https://blog.csdn.net/zhongyangtony/article/details/80879425" target="_blank" rel="noopener">https://blog.csdn.net/zhongyangtony/article/details/80879425</a></p>
+<p>!!!<a href="https://blog.csdn.net/qq_37924084/article/details/78360003" target="_blank" rel="noopener">https://blog.csdn.net/qq_37924084/article/details/78360003</a></p>
+<h3 id="【内部碎片】"><a href="#【内部碎片】" class="headerlink" title="【内部碎片】"></a>【内部碎片】</h3><p>内部碎片就是已经被分配出去（能明确指出属于哪个进程）却不能被利用的内存空间；<br>内部碎片是处于（操作系统分配的用于装载某一进程的内存）区域内部或页面内部的存储块。占有这些区域或页面的进程并不使用这个存储块。而在进程占有这块存储块时，系统无法利用它。直到进程释放它，或进程结束时，系统才有可能利用这个存储块。<br>单道连续分配只有内部碎片。多道固定连续分配既有内部碎片，又有外部碎片。<br>【外部碎片】<br>外部碎片指的是还没有被分配出去（不属于任何进程），但由于太小了无法分配给申请内存空间的新进程的内存空闲区域。<br>外部碎片是处于任何两个已分配区域或页面之间的空闲存储块。这些存储块的总和可以满足当前申请的长度要求，但是由于它们的地址不连续或其他原因，使得系统无法满足当前申请。</p>
+
       
 
       
@@ -245,7 +270,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#pipe"><span class="toc-number">1.</span> <span class="toc-text">pipe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS缺页置换算法"><span class="toc-number">2.</span> <span class="toc-text">OS缺页置换算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁发生的条件以及如何解决死锁"><span class="toc-number">3.</span> <span class="toc-text">死锁发生的条件以及如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux的4种锁机制："><span class="toc-number">4.</span> <span class="toc-text">Linux的4种锁机制：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#thread-pool"><span class="toc-number">5.</span> <span class="toc-text">thread pool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5种IO模型"><span class="toc-number">6.</span> <span class="toc-text">5种IO模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码到可执行文件的过程"><span class="toc-number">7.</span> <span class="toc-text">源码到可执行文件的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#message-queue"><span class="toc-number">8.</span> <span class="toc-text">message queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟内存和物理内存"><span class="toc-number">9.</span> <span class="toc-text">虚拟内存和物理内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#微内核与宏内核"><span class="toc-number">10.</span> <span class="toc-text">微内核与宏内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-memory"><span class="toc-number">11.</span> <span class="toc-text">virtual memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#file-descriptor"><span class="toc-number">12.</span> <span class="toc-text">file descriptor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket"><span class="toc-number">13.</span> <span class="toc-text">socket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shared-memory"><span class="toc-number">14.</span> <span class="toc-text">shared memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请你说一说死锁发生的条件以及如何解决死锁"><span class="toc-number">15.</span> <span class="toc-text">请你说一说死锁发生的条件以及如何解决死锁</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#pipe"><span class="toc-number">1.</span> <span class="toc-text">pipe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS缺页置换算法"><span class="toc-number">2.</span> <span class="toc-text">OS缺页置换算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁发生的条件以及如何解决死锁"><span class="toc-number">3.</span> <span class="toc-text">死锁发生的条件以及如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux的4种锁机制："><span class="toc-number">4.</span> <span class="toc-text">Linux的4种锁机制：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#thread-pool"><span class="toc-number">5.</span> <span class="toc-text">thread pool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5种IO模型"><span class="toc-number">6.</span> <span class="toc-text">5种IO模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码到可执行文件的过程"><span class="toc-number">7.</span> <span class="toc-text">源码到可执行文件的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#message-queue"><span class="toc-number">8.</span> <span class="toc-text">message queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟内存和物理内存"><span class="toc-number">9.</span> <span class="toc-text">虚拟内存和物理内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#微内核与宏内核"><span class="toc-number">10.</span> <span class="toc-text">微内核与宏内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-memory"><span class="toc-number">11.</span> <span class="toc-text">virtual memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#file-descriptor"><span class="toc-number">12.</span> <span class="toc-text">file descriptor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket"><span class="toc-number">13.</span> <span class="toc-text">socket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shared-memory"><span class="toc-number">14.</span> <span class="toc-text">shared memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请你说一说死锁发生的条件以及如何解决死锁"><span class="toc-number">15.</span> <span class="toc-text">请你说一说死锁发生的条件以及如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三态模型"><span class="toc-number">16.</span> <span class="toc-text">三态模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么引入（多）线程"><span class="toc-number">17.</span> <span class="toc-text">为什么引入（多）线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程与线程之间的关系"><span class="toc-number">18.</span> <span class="toc-text">进程与线程之间的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程与线程之间的区别"><span class="toc-number">19.</span> <span class="toc-text">进程与线程之间的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程调度的方式"><span class="toc-number">20.</span> <span class="toc-text">进程调度的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理器调度层次"><span class="toc-number">21.</span> <span class="toc-text">处理器调度层次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#批处理系统"><span class="toc-number">22.</span> <span class="toc-text">批处理系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级通信机制："><span class="toc-number">23.</span> <span class="toc-text">高级通信机制：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁的概念"><span class="toc-number">24.</span> <span class="toc-text">死锁的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多道程序设计中，进程间存在的制约关系有哪些？"><span class="toc-number">25.</span> <span class="toc-text">多道程序设计中，进程间存在的制约关系有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快表"><span class="toc-number">26.</span> <span class="toc-text">快表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分段和分页"><span class="toc-number">27.</span> <span class="toc-text">分段和分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【内部碎片】"><span class="toc-number">28.</span> <span class="toc-text">【内部碎片】</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -353,26 +378,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -381,11 +386,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -402,6 +407,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">

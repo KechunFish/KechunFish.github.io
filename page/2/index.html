@@ -159,7 +159,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p><a href="https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032" target="_blank" rel="noopener">https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032</a><br>（1）递归查询<br>递归查询是一种DNS 服务器的查询模式，在该模式下DNS 服务器接收到客户机请求，必须使用一个准确的查询结果回复客户机。如果DNS 服务器本地没有存储查询DNS 信息，那么该服务器会询问其他服务器，并将返回的查询结果提交给客户机。<br>（2）迭代查询<br>DNS 服务器另外一种查询方式为迭代查询，DNS 服务器会向客户机提供其他能够解析查询请求的DNS 服务器地址，当客户机发送查询请求时，DNS 服务器并不直接回复查询结果，而是告诉客户机另一台DNS 服务器地址，客户机再向这台DNS服务器提交请求，依次循环直到返回查询的结果为止。</p>
+        <p><a href="https://www.mayiwenku.com/p-4641522.html" target="_blank" rel="noopener">https://www.mayiwenku.com/p-4641522.html</a><br>!!!<a href="https://www.cnblogs.com/onepixel/p/7092302.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/p/7092302.html</a></p>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p><a href="https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032" target="_blank" rel="noopener">https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032</a><br>（1）递归查询<br>递归查询是一种DNS 服务器的查询模式，在该模式下DNS 服务器接收到客户机请求，必须使用一个准确的查询结果回复客户机。如果DNS 服务器本地没有存储查询DNS 信息，那么该服务器会询问其他服务器，并将返回的查询结果提交给客户机。<br>（2）迭代查询<br>DNS 服务器另外一种查询方式为迭代查询，DNS 服务器会向客户机提供其他能够解析查询请求的DNS 服务器地址，当客户机发送查询请求时，DNS 服务器并不直接回复查询结果，而是告诉客户机另一台DNS 服务器地址，客户机再向这台DNS服务器提交请求，依次循环直到返回查询的结果为止。</p>
 <h3 id="拥塞窗口-cwnd"><a href="#拥塞窗口-cwnd" class="headerlink" title="拥塞窗口, cwnd"></a>拥塞窗口, cwnd</h3><p>快重传和快恢复</p>
 <h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>网络层等到数据链层用mac地址作为通信目标，数据包到达网络等准备往数据链层发送的时候，首先会去自己的arp缓存表(存着ip-mac对应关系)去查找改目标ip的mac地址，如果查到了，就讲目标ip的mac地址封装到链路层数据包的包头。如果缓存中没有找到，会发起一个广播：who is ip XXX tell ip XXX,所有收到的广播的机器看这个ip是不是自己的，如果是自己的，则以单拨的形式将自己的mac地址回复给请求的机器</p>
 <h3 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h3><p>发送，传播，处理，排队</p>
@@ -185,8 +186,33 @@
 <p>devices need the MAC address for communication on a local area network.<br>MAC address is what identifies the actual devices</p>
 <p>1) first look at its internal list, ARP cache, to see the computer B’s ip adrress matches the MAC address<br>2) send broadcast to all computers in the local network to ask which computer has specific ip address for their mac address (then respond, then transfer, store in ARP cache)<br>ARP : Internet addresss, physical addresss, type</p>
 <p>1) dynamic entry is created automatically when a device sends out a broadcast message out on the network. not permanent, flushed out periodicly<br>2) static entry is where someone manually enters an ip to mac address association using the arp command line, reduce the traffic</p>
-<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>生存时间 TTL(Time to Live)跳数<br>IP ::= {&lt;网络号&gt;,&lt;子网号&gt;,&lt;主机号&gt;}</p>
-<h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><p>网络层<br>路由表(目的网络地址，下一跳地址(默认端口，或者下一跳的地址))，知道去重点的下一站的端口</p>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>生存时间 TTL(Time to Live)跳数<br>IP ::= {&lt;网络号&gt;,&lt;子网号&gt;,&lt;主机号&gt;}<br>二级IP地址，子网掩码覆盖网络号<br>三级IP地址，子网掩码覆盖网络号和子网号，但是外部看还是只有网络号</p>
+<h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><p>网络层<br>路由表(目的网络地址，下一跳地址(默认端口，或者下一跳的地址))，知道去重点的下一站的端口<br>有了子网掩码，路由表需要多加一项 子网掩码</p>
+<h3 id="CIDR-无分类编制"><a href="#CIDR-无分类编制" class="headerlink" title="CIDR 无分类编制"></a>CIDR 无分类编制</h3><p>IP ::= {&lt;网络前缀&gt;,&lt;主机号&gt;}<br>128.14.35.7/20<br>路由聚合，利用路由表中的CIDR,构成超网<br>由网络前缀和下一跳地址组成，可能会得到不止一个匹配结果，选择具有最长网络前缀的路由<br>使用二叉线索查找路由表</p>
+<h3 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h3><p>在IP数据报里，作为其中的数据部分<br>ping直接使用ICMP，返回的ICMP的保温上都有时间戳<br>traceroute，TTL减少实现的(UDP)<br>4种，终点不可达，时间超过，参数问题，<br>改变路由，如果默认路由器发现主机法网某个目的地址的数据报的最佳路由应当经过网络上的另一个路由器R，急用改变路由报文把这个情况告诉主机<br>把收到的需要进行报错的报文的首部和数据字段前8个字节提取踹</p>
+<h3 id="内部网关协议-IGP"><a href="#内部网关协议-IGP" class="headerlink" title="内部网关协议 IGP"></a>内部网关协议 IGP</h3><p>在一个自治系统(AS)内,RIP,OSPF</p>
+<h3 id="外部网关协议-EGP"><a href="#外部网关协议-EGP" class="headerlink" title="外部网关协议 EGP"></a>外部网关协议 EGP</h3><p>不同的自治系统中,BGP</p>
+<h3 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h3><p>紧和相邻路由器交换信息<br>交换的信息是当前本路由器所知道的全部信息<br>按固定的时间间隔交换路由信息</p>
+<p>找出目的地的最短距离</p>
+<p>当网络初出现故障时，要经过很长的时间才能将此信息传送到有的路由器</p>
+<h3 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h3><p>直接使用IP数据报传送</p>
+<p>向本自治系统内的所有路由器发送消息<br>发送本路由器相邻的所有路由器的链路状态<br>只有当链路转台发生变化时才发<br>(例如是同Dijkstra最短路径)<br>OSPF将AS划分为区域</p>
+<h3 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h3><p>BGP发言人</p>
+<h3 id="IP多播"><a href="#IP多播" class="headerlink" title="IP多播"></a>IP多播</h3><p>IGMP<br>发送一次，路由器在转发分组时把收到的的分组复制成三个副本</p>
+<h3 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h3><p>所有通过互联网传送的数据都是加密的<br>在效果上和专用网是一样的</p>
+<h3 id="NAT"><a href="#NAT" class="headerlink" title="NAT"></a>NAT</h3><p>网络地址转换(Network Address Translation)<br>要在NAT路由器上将本地地址转换成全球IP地址<br>NAT路由器具有n个全球IP地址是，专用网内最多可以用是有n台主机接入到互联网<br>可以多个本地地址主机，公用一个NAT路由器上的全球IP地址<br>网络地址于端口号转换</p>
+<h3 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h3><p>复用和分用的地方<br>通过协议端口号解决</p>
+<h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><p>发送方的UDP对应程序交下来，在添加首部之后就交付给IP层<br>对应用层的报文，不合并也不拆分，保留报文的边界(应用层必须选择合适的大小报文)<br>UDP没有拥塞控制，网络出现拥塞也不会降低主机的发送速率<br>支持一对一，一对多，多对一<br>首部只有八个字节</p>
+<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>连接只能是点对点(两个套接字socket)<br>TCP链接的断电叫做套接字socket<br>端口号拼接到IP地址构成了套接字<br>套接字socket = (IP地址：端口号)<br>TCP ::= {socket1, socket2} = {(IP1：port)，(IP2：port2)}</p>
+<p>超时重传，B接受M1时检测出了差错就只丢弃M1<br>A过了一段时间没有收到确认，重新传送前面发送过的分组，超时计时器<br>A发送完一个分组后，必须暂时保留已发送的分组副本，在收到相应的确认后才能清除副本，时间应当比往返时间更长一点<br>如果B接收到了A的M1但又收到了一遍需要再次确认</p>
+<p>ARP协议，滑动窗口，流水线传输<br>累计确认，收到几个分组后对最后一个分组发送确认</p>
+<p>确认号，是期望收到对方一下一个报文段的第一个数据自己的序号<br>最大报文段长度(MSS，maximum Segment Size)，不算首部，所以只是数据段的最大程度</p>
+<p>SACK</p>
+<p>流量控制</p>
+<h3 id="DNS-1"><a href="#DNS-1" class="headerlink" title="DNS"></a>DNS</h3><p>递归查询 帮助主机查<br>迭代查询 告诉主机去哪查</p>
+<h3 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h3><p>知名文件的类型与格式<br>复制整个文件<br>想要读取，得先获得一个本地的文件副本<br>想要修改，只能对本地的进行修改，然后再将修改后的文件副本传回到源节点<br>允许多个同时<br>TCP！！<br>主要功能是煎炒不同操作系统下 处理文件的不兼容性<br>服务器,一个主进程接受新的请求，几个从属进程处理单个请求<br>port: 21</p>
+<p>客户端和服务器有两个TCP连接<br>控制连接，数据连接<br>传送请求， 传输文件</p>
+<h3 id="TFTP"><a href="#TFTP" class="headerlink" title="TFTP"></a>TFTP</h3><p>简单文件传送协议<br>UDP，有自己的差错改正措施<br>优势，当向多个机器下载时，代码占内存小<br>设备执行只读存储器中的代码，在网络上广播一个TFTP请求，网络上的服务器就发送响应</p>
 
       
 
@@ -271,7 +297,7 @@
 <h3 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h3><h3 id="tcp"><a href="#tcp" class="headerlink" title="tcp"></a>tcp</h3><h3 id="基本算法的实现"><a href="#基本算法的实现" class="headerlink" title="基本算法的实现"></a>基本算法的实现</h3><h3 id="读写锁知道吗"><a href="#读写锁知道吗" class="headerlink" title="读写锁知道吗"></a>读写锁知道吗</h3><h3 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h3><h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><h3 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h3><p><a href="https://www.nowcoder.com/discuss/374698" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/374698</a></p>
 <h3 id="epoll-select-poll区别"><a href="#epoll-select-poll区别" class="headerlink" title="epoll select poll区别"></a>epoll select poll区别</h3><p>!!!!!!<a href="https://www.cnblogs.com/aspirant/p/9166944.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspirant/p/9166944.html</a></p>
 <h3 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h3><p>特殊内存，应用程序和kernel共享的<br>事件通知<br>I/O多路复用(又被称为“事件驱动<br><a href="https://www.zhihu.com/question/28594409" target="_blank" rel="noopener">https://www.zhihu.com/question/28594409</a><br><a href="https://www.cnblogs.com/aspirant/p/9166944.html" target="_blank" rel="noopener">https://www.cnblogs.com/aspirant/p/9166944.html</a></p>
-<h3 id="能否用memcmp比较-struct中成员"><a href="#能否用memcmp比较-struct中成员" class="headerlink" title="能否用memcmp比较 struct中成员"></a>能否用memcmp比较 struct中成员</h3><h3 id="内存对齐"><a href="#内存对齐" class="headerlink" title="内存对齐"></a>内存对齐</h3><h3 id="循环展开"><a href="#循环展开" class="headerlink" title="循环展开"></a>循环展开</h3><h3 id="股票问题-（-1-3-5-7-2-3-是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）"><a href="#股票问题-（-1-3-5-7-2-3-是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）" class="headerlink" title="股票问题 （[1 3 5 7 2 3 ]是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）"></a>股票问题 （[1 3 5 7 2 3 ]是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）</h3><h3 id="shared-ptr的循环引用问题s"><a href="#shared-ptr的循环引用问题s" class="headerlink" title="shared_ptr的循环引用问题s"></a>shared_ptr的循环引用问题s</h3><h3 id="系统调用、什么时候会阻塞，具体情况"><a href="#系统调用、什么时候会阻塞，具体情况" class="headerlink" title="系统调用、什么时候会阻塞，具体情况"></a>系统调用、什么时候会阻塞，具体情况</h3><h3 id="new失败后会抛出什么异常，怎么样避免抛出异常"><a href="#new失败后会抛出什么异常，怎么样避免抛出异常" class="headerlink" title="new失败后会抛出什么异常，怎么样避免抛出异常"></a>new失败后会抛出什么异常，怎么样避免抛出异常</h3><h3 id="几亿个数字，如何找出前k大的数字"><a href="#几亿个数字，如何找出前k大的数字" class="headerlink" title="几亿个数字，如何找出前k大的数字"></a>几亿个数字，如何找出前k大的数字</h3><p><a href="https://blog.csdn.net/suibianshen2012/article/details/52003082" target="_blank" rel="noopener">https://blog.csdn.net/suibianshen2012/article/details/52003082</a></p>
+<h3 id="能否用memcmp比较-struct中成员"><a href="#能否用memcmp比较-struct中成员" class="headerlink" title="能否用memcmp比较 struct中成员"></a>能否用memcmp比较 struct中成员</h3><h3 id="内存对齐"><a href="#内存对齐" class="headerlink" title="内存对齐"></a>内存对齐</h3><h3 id="RTTI"><a href="#RTTI" class="headerlink" title="RTTI"></a>RTTI</h3><h3 id="STL的allocaotr"><a href="#STL的allocaotr" class="headerlink" title="STL的allocaotr"></a>STL的allocaotr</h3><h3 id="循环展开"><a href="#循环展开" class="headerlink" title="循环展开"></a>循环展开</h3><h3 id="股票问题-（-1-3-5-7-2-3-是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）"><a href="#股票问题-（-1-3-5-7-2-3-是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）" class="headerlink" title="股票问题 （[1 3 5 7 2 3 ]是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）"></a>股票问题 （[1 3 5 7 2 3 ]是每日股票价格，买一次卖一次，问如何使得收益最大，即求最大差）</h3><h3 id="shared-ptr的循环引用问题s"><a href="#shared-ptr的循环引用问题s" class="headerlink" title="shared_ptr的循环引用问题s"></a>shared_ptr的循环引用问题s</h3><h3 id="系统调用、什么时候会阻塞，具体情况"><a href="#系统调用、什么时候会阻塞，具体情况" class="headerlink" title="系统调用、什么时候会阻塞，具体情况"></a>系统调用、什么时候会阻塞，具体情况</h3><h3 id="new失败后会抛出什么异常，怎么样避免抛出异常"><a href="#new失败后会抛出什么异常，怎么样避免抛出异常" class="headerlink" title="new失败后会抛出什么异常，怎么样避免抛出异常"></a>new失败后会抛出什么异常，怎么样避免抛出异常</h3><h3 id="几亿个数字，如何找出前k大的数字"><a href="#几亿个数字，如何找出前k大的数字" class="headerlink" title="几亿个数字，如何找出前k大的数字"></a>几亿个数字，如何找出前k大的数字</h3><p><a href="https://blog.csdn.net/suibianshen2012/article/details/52003082" target="_blank" rel="noopener">https://blog.csdn.net/suibianshen2012/article/details/52003082</a></p>
 <h3 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h3><p><a href="https://www.tutorialspoint.com/unix_sockets/what_is_socket.htm" target="_blank" rel="noopener">https://www.tutorialspoint.com/unix_sockets/what_is_socket.htm</a><br>Sockets allow communication between two different processes on the same or different machines. To be more precise, it’s a way to talk to other computers using standard Unix file descriptors. In Unix, every I/O action is done by writing or reading a file descriptor. A file descriptor is just an integer associated with an open file and it can be a network connection, a text file, a terminal, or something else.</p>
 <h3 id="事件通知"><a href="#事件通知" class="headerlink" title="事件通知"></a>事件通知</h3><h3 id="http"><a href="#http" class="headerlink" title="http"></a>http</h3><h3 id="同步I-O"><a href="#同步I-O" class="headerlink" title="同步I/O"></a>同步I/O</h3><h3 id="IP-MAC"><a href="#IP-MAC" class="headerlink" title="IP MAC"></a>IP MAC</h3><p>ip不变，mac变<br>以太网规协议定，接入网络的设备都必须安装网络适配器，即网卡， 数据包必须是从一块网卡传送到另一块网卡。而网卡地址就是数据包的发送地址和接收地址，也就是帧首部所包含的MAC地址，MAC地址是每块网卡的身份标识，就如同我们身份证上的身份证号码，具有全球唯一性。MAC地址采用十六进制标识，共6个字节， 前三个字节是厂商编号，后三个字节是网卡流水号，例如 4C-0F-6E-12-D2-19</p>
 <h3 id="delete"><a href="#delete" class="headerlink" title="delete[]"></a>delete[]</h3><p><a href="https://www.cnblogs.com/wangjian8888/p/7905176.html" target="_blank" rel="noopener">https://www.cnblogs.com/wangjian8888/p/7905176.html</a><br><a href="https://segmentfault.com/a/1190000016128411" target="_blank" rel="noopener">https://segmentfault.com/a/1190000016128411</a></p>
@@ -440,26 +466,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -468,11 +474,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,6 +495,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
