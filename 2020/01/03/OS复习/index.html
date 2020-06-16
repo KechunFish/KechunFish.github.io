@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Kechuno 顾可纯">
 <meta property="og:description" content="用的是现代操作系统（第四版） pipe管道主要包括无名管道和命名管道:管道可用于具有亲缘关系的父子进程间的通信，有名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信  traditional pipe is “unnamed” and lasts only as long as the process. A named pipe, however, can last as long">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-11T13:24:48.566Z">
+<meta property="og:updated_time" content="2020-03-11T17:32:46.950Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kechuno 顾可纯" type="application/atom+xml">
@@ -154,7 +154,7 @@
 
         
         <a href="/2020/01/03/OS%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-01-03T16:45:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-03</time>
+  	<time datetime="2020-01-03T09:45:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-03</time>
 </a>
         
       </header>
@@ -196,6 +196,15 @@
 <h3 id="分段和分页"><a href="#分段和分页" class="headerlink" title="分段和分页"></a>分段和分页</h3><p><a href="https://blog.csdn.net/zhongyangtony/article/details/80879425" target="_blank" rel="noopener">https://blog.csdn.net/zhongyangtony/article/details/80879425</a></p>
 <p>!!!<a href="https://blog.csdn.net/qq_37924084/article/details/78360003" target="_blank" rel="noopener">https://blog.csdn.net/qq_37924084/article/details/78360003</a></p>
 <h3 id="【内部碎片】"><a href="#【内部碎片】" class="headerlink" title="【内部碎片】"></a>【内部碎片】</h3><p>内部碎片就是已经被分配出去（能明确指出属于哪个进程）却不能被利用的内存空间；<br>内部碎片是处于（操作系统分配的用于装载某一进程的内存）区域内部或页面内部的存储块。占有这些区域或页面的进程并不使用这个存储块。而在进程占有这块存储块时，系统无法利用它。直到进程释放它，或进程结束时，系统才有可能利用这个存储块。<br>单道连续分配只有内部碎片。多道固定连续分配既有内部碎片，又有外部碎片。<br>【外部碎片】<br>外部碎片指的是还没有被分配出去（不属于任何进程），但由于太小了无法分配给申请内存空间的新进程的内存空闲区域。<br>外部碎片是处于任何两个已分配区域或页面之间的空闲存储块。这些存储块的总和可以满足当前申请的长度要求，但是由于它们的地址不连续或其他原因，使得系统无法满足当前申请。</p>
+<h3 id="stack-heap"><a href="#stack-heap" class="headerlink" title="stack heap"></a>stack heap</h3><p>!!!!!!!!<a href="https://www.youtube.com/watch?v=_8-ht2AKyH4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=_8-ht2AKyH4</a></p>
+<h3 id="线程间通信的方式"><a href="#线程间通信的方式" class="headerlink" title="线程间通信的方式:"></a>线程间通信的方式:</h3><p>1、临界区：</p>
+<p>通过多线程的串行化来访问公共资源或一段代码，速度快，适合控制数据访问；</p>
+<p>2、互斥量 Synchronized/Lock：</p>
+<p>采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个线程同时访问</p>
+<p>3、信号量 Semphare：</p>
+<p>为控制具有有限数量的用户资源而设计的，它允许多个线程在同一时刻去访问同一个资源，但一般需要限制同一时刻访问此资源的最大线程数目。</p>
+<p>4、事件(信号)，Wait/Notify：</p>
+<p>通过通知操作的方式来保持多线程同步，还可以方便的实现多线程优先级的比较操作</p>
 
       
 
@@ -270,7 +279,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#pipe"><span class="toc-number">1.</span> <span class="toc-text">pipe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS缺页置换算法"><span class="toc-number">2.</span> <span class="toc-text">OS缺页置换算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁发生的条件以及如何解决死锁"><span class="toc-number">3.</span> <span class="toc-text">死锁发生的条件以及如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux的4种锁机制："><span class="toc-number">4.</span> <span class="toc-text">Linux的4种锁机制：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#thread-pool"><span class="toc-number">5.</span> <span class="toc-text">thread pool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5种IO模型"><span class="toc-number">6.</span> <span class="toc-text">5种IO模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码到可执行文件的过程"><span class="toc-number">7.</span> <span class="toc-text">源码到可执行文件的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#message-queue"><span class="toc-number">8.</span> <span class="toc-text">message queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟内存和物理内存"><span class="toc-number">9.</span> <span class="toc-text">虚拟内存和物理内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#微内核与宏内核"><span class="toc-number">10.</span> <span class="toc-text">微内核与宏内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-memory"><span class="toc-number">11.</span> <span class="toc-text">virtual memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#file-descriptor"><span class="toc-number">12.</span> <span class="toc-text">file descriptor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket"><span class="toc-number">13.</span> <span class="toc-text">socket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shared-memory"><span class="toc-number">14.</span> <span class="toc-text">shared memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请你说一说死锁发生的条件以及如何解决死锁"><span class="toc-number">15.</span> <span class="toc-text">请你说一说死锁发生的条件以及如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三态模型"><span class="toc-number">16.</span> <span class="toc-text">三态模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么引入（多）线程"><span class="toc-number">17.</span> <span class="toc-text">为什么引入（多）线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程与线程之间的关系"><span class="toc-number">18.</span> <span class="toc-text">进程与线程之间的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程与线程之间的区别"><span class="toc-number">19.</span> <span class="toc-text">进程与线程之间的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程调度的方式"><span class="toc-number">20.</span> <span class="toc-text">进程调度的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理器调度层次"><span class="toc-number">21.</span> <span class="toc-text">处理器调度层次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#批处理系统"><span class="toc-number">22.</span> <span class="toc-text">批处理系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级通信机制："><span class="toc-number">23.</span> <span class="toc-text">高级通信机制：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁的概念"><span class="toc-number">24.</span> <span class="toc-text">死锁的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多道程序设计中，进程间存在的制约关系有哪些？"><span class="toc-number">25.</span> <span class="toc-text">多道程序设计中，进程间存在的制约关系有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快表"><span class="toc-number">26.</span> <span class="toc-text">快表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分段和分页"><span class="toc-number">27.</span> <span class="toc-text">分段和分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【内部碎片】"><span class="toc-number">28.</span> <span class="toc-text">【内部碎片】</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#pipe"><span class="toc-number">1.</span> <span class="toc-text">pipe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS缺页置换算法"><span class="toc-number">2.</span> <span class="toc-text">OS缺页置换算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁发生的条件以及如何解决死锁"><span class="toc-number">3.</span> <span class="toc-text">死锁发生的条件以及如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux的4种锁机制："><span class="toc-number">4.</span> <span class="toc-text">Linux的4种锁机制：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#thread-pool"><span class="toc-number">5.</span> <span class="toc-text">thread pool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5种IO模型"><span class="toc-number">6.</span> <span class="toc-text">5种IO模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码到可执行文件的过程"><span class="toc-number">7.</span> <span class="toc-text">源码到可执行文件的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#message-queue"><span class="toc-number">8.</span> <span class="toc-text">message queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟内存和物理内存"><span class="toc-number">9.</span> <span class="toc-text">虚拟内存和物理内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#微内核与宏内核"><span class="toc-number">10.</span> <span class="toc-text">微内核与宏内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-memory"><span class="toc-number">11.</span> <span class="toc-text">virtual memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#file-descriptor"><span class="toc-number">12.</span> <span class="toc-text">file descriptor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket"><span class="toc-number">13.</span> <span class="toc-text">socket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shared-memory"><span class="toc-number">14.</span> <span class="toc-text">shared memory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请你说一说死锁发生的条件以及如何解决死锁"><span class="toc-number">15.</span> <span class="toc-text">请你说一说死锁发生的条件以及如何解决死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三态模型"><span class="toc-number">16.</span> <span class="toc-text">三态模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么引入（多）线程"><span class="toc-number">17.</span> <span class="toc-text">为什么引入（多）线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程与线程之间的关系"><span class="toc-number">18.</span> <span class="toc-text">进程与线程之间的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程与线程之间的区别"><span class="toc-number">19.</span> <span class="toc-text">进程与线程之间的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程调度的方式"><span class="toc-number">20.</span> <span class="toc-text">进程调度的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理器调度层次"><span class="toc-number">21.</span> <span class="toc-text">处理器调度层次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#批处理系统"><span class="toc-number">22.</span> <span class="toc-text">批处理系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级通信机制："><span class="toc-number">23.</span> <span class="toc-text">高级通信机制：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁的概念"><span class="toc-number">24.</span> <span class="toc-text">死锁的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多道程序设计中，进程间存在的制约关系有哪些？"><span class="toc-number">25.</span> <span class="toc-text">多道程序设计中，进程间存在的制约关系有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快表"><span class="toc-number">26.</span> <span class="toc-text">快表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分段和分页"><span class="toc-number">27.</span> <span class="toc-text">分段和分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【内部碎片】"><span class="toc-number">28.</span> <span class="toc-text">【内部碎片】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stack-heap"><span class="toc-number">29.</span> <span class="toc-text">stack heap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程间通信的方式"><span class="toc-number">30.</span> <span class="toc-text">线程间通信的方式:</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -378,6 +387,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -386,15 +399,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -410,11 +431,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color5">2020</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,11 +443,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">

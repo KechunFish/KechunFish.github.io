@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Kechuno 顾可纯">
 <meta property="og:description" content="ahttps:&#x2F;&#x2F;www.cnblogs.com&#x2F;acge&#x2F;p&#x2F;10200601.html面向对象程序设计将数据与对数据的操作放在一起，作为相互依存、不可分割的整体来处理对象是属性和方法的封装体友元函数不是类的成员函数可以在类外引用对象的公有数据成员，而且还可以调用对象的公用成员函数，但必须指出对象名如果为一个对象定义了一个引用变量，它们是共占同一段存储单元的，实际上它们是同一个对象不同的名字访问">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-11T13:32:55.192Z">
+<meta property="og:updated_time" content="2020-03-25T14:00:39.650Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kechuno 顾可纯" type="application/atom+xml">
@@ -154,7 +154,7 @@
 
         
         <a href="/2020/03/05/%E4%BB%80%E4%B9%88%E9%83%BD%E6%9C%89/" class="archive-article-date">
-  	<time datetime="2020-03-05T14:26:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+  	<time datetime="2020-03-05T07:26:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
 </a>
         
       </header>
@@ -187,6 +187,8 @@
 <h3 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h3><p>动态路由协议有自己的路由算法，能够自动适应网络拓扑的变化，适用于具有一定数量三层设备的网络<br><a href="https://blog.csdn.net/w123567890/article/details/22385801?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/w123567890/article/details/22385801?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
 <h4 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h4><p>Routing Information Protocol<br>它是一种较为简单的内部网关协议IGP（Interior Gateway Protocol），主要用于规模较小的网络中，比如校园网以及结构较简单的地区性网络。对于更为复杂的环境和大型网络，一般不使用RIP。<br>RIP是一种基于距离矢量（Distance-Vector）算法的协议，它通过UDP报文进行路由信息的交换，使用的端口号为520。<br>RIP使用跳数（Hop Count）来衡量到达目的地址的距离，称为度量值。在RIP中，缺省情况下，路由器到与它直接相连网络的跳数为0，通过一个路由器可达的网络的跳数为1，其余依此类推。也就是说，度量值等于从本网络到达目的网络间的路由器数量。为限制收敛时间，RIP规定度量值取0～15之间的整数，大于或等于16的跳数被定义为无穷大，即目的网络或主机不可达。由于这个限制，使得RIP不可能在大型网络中得到应用。<br>分V1， V2</p>
 <h4 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h4><p>Open Shortest Path First<br>是IETF组织开发的一个基于链路状态的内部网关协议</p>
+<hr>
+<p>引用是直接访问，指针是间接访问<br>指针传递的是值，地址的值，引用穿的是地址，变量的地址<br>应用底层是通过指针实现的，将x的地址放入eax寄存器，将eax的指放入b的地址，引用和指针一样</p>
 
       
 
@@ -222,6 +224,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/03/16/TCP%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          TCP复习
+        
+      </div>
+    </a>
   
   
     <a href="/2020/02/29/Network%E5%A4%8D%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
@@ -360,6 +371,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -368,15 +383,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -392,11 +415,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color5">2020</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -404,11 +427,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">

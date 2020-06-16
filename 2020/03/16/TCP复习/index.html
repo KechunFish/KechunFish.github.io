@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Cheatsheet | Kechuno 顾可纯</title>
+  <title>TCP复习 | Kechuno 顾可纯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Kechuno 顾可纯">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;Cheatsheet&#x2F;index.html">
+  <meta name="description" content="TCP!!!!https:&#x2F;&#x2F;coolshell.cn&#x2F;articles&#x2F;11564.html!!!!https:&#x2F;&#x2F;blog.csdn.net&#x2F;sinat_36629696&#x2F;article&#x2F;details&#x2F;80740678?depth_1-utm_source=distribute.pc_relevant.none-task&amp;amp;utm_source=distribute.pc_releva">
+<meta name="keywords" content="复习,Network,TCP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP复习">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;16&#x2F;TCP%E5%A4%8D%E4%B9%A0&#x2F;index.html">
 <meta property="og:site_name" content="Kechuno 顾可纯">
+<meta property="og:description" content="TCP!!!!https:&#x2F;&#x2F;coolshell.cn&#x2F;articles&#x2F;11564.html!!!!https:&#x2F;&#x2F;blog.csdn.net&#x2F;sinat_36629696&#x2F;article&#x2F;details&#x2F;80740678?depth_1-utm_source=distribute.pc_relevant.none-task&amp;amp;utm_source=distribute.pc_releva">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-03-18T00:16:58.769Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kechuno 顾可纯" type="application/atom+xml">
@@ -137,36 +141,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-TCP复习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/05/%E4%BB%80%E4%B9%88%E9%83%BD%E6%9C%89/" class="archive-article-date">
-  	<time datetime="2020-03-05T07:26:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/%E4%BB%80%E4%B9%88%E9%83%BD%E6%9C%89/">什么都有</a>
+    <h1 class="article-title" itemprop="name">
+      TCP复习
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/03/16/TCP%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-03-16T11:57:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>!!!!<a href="https://coolshell.cn/articles/11564.html" target="_blank" rel="noopener">https://coolshell.cn/articles/11564.html</a><br>!!!!<a href="https://blog.csdn.net/sinat_36629696/article/details/80740678?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/sinat_36629696/article/details/80740678?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
+<p>!!!<a href="https://www.cnblogs.com/Doing-what-I-love/p/5535150.html" target="_blank" rel="noopener">https://www.cnblogs.com/Doing-what-I-love/p/5535150.html</a><br>!!!<a href="https://www.jianshu.com/p/ca64764e4a26" target="_blank" rel="noopener">https://www.jianshu.com/p/ca64764e4a26</a></p>
+<h3 id="TCP中的状态"><a href="#TCP中的状态" class="headerlink" title="TCP中的状态"></a>TCP中的状态</h3><p>   1).CLOSED:表示初始状态.</p>
+<p>   2).LISTEN:表示服务器端的某个SOCKET处于监听状态，可以接受连接。</p>
+<p>   3).SYN_RCVD:这个状态表示接受到了SYN报文，在正常情况下，这个状态是服务器端的SOCKET在建立TCP连接时的三次握手会话过程中的一个中间状态，很短暂，基本上用netstat你是很难看到这种状态的，除非你特意写了一个客户端测试程序，故意将三次TCP握手 过程中最后一个ACK报文不予发送。因此这种状态时，当收到客户端的ACK报文后，它会进入到ESTABLISHED状态。</p>
+<p>   4).SYN_SENT:这个状态与SYN_RCVD有关，当客户端发送SYN报文，因此也随即会进入到了SYN_SENT状态，并等待服务端的发送三次握手中的第2个报文。SYN_SENT状态表示客户端已发送SYN报文。</p>
+<p>   5).ESTABLISHED：表示连接已经建立了。</p>
+<p>   6).FIN_WAIT_1:其实FIN_WAIT_1和FIN_WAIT_2状态的真正含义都是表示等待对方的FIN报文。而这两种状态有什仫区别呢？FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED状态时，它想主动关闭连接，向对方发送了FIN报文，此时该SOCKET即进入到FIN_WAIT_1状态。而当接受到对方回应ACK报文后，则进入到FIN_WAIT_2状态，当然在实际的正常情况下，无论对方何种情况下，都应该马上回应ACK报文，所以FIN_WAIT_1状态一般是比较难见到的，而FIN_WAIT_2状态还有时常常可以用netstat看到。</p>
+<p>   7).FIN_WAIT_2：实际上FIN_WAIT_2状态下的SOCKET，表示半连接，也即有一方要求关闭连接，但另外还告诉对方，我暂时还有点数据需要传送给你，稍后再关闭连接。</p>
+<p>   8).TIME_WAIT:表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL后即可回到CLOSED可用状态了。如果FIN_WAIT_1状态下，收到了对方同时带FIN标 志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无须经过FIN_WAIT_2状态。</p>
+<p>   9).CLOSING:这种状态比较特殊，实际情况中应该是很少见，属于一种比较罕见的例外状态。正常情况下，当你发送FIN报文后，按理来说是应该先收到(或同时收到)对方的ACK报文，再收到对方的FIN报文。但是CLOSING状态表示你发送FIN报文后，并没有收到对方的ACK报文，反而却收到了对方的FIN报文。什么情况下会出现此种情况呢？其实细想一下，也不难得出结论：那就是如果双方几乎在同时close一 个SOCKET的话，那么就出现了双方同时发送FIN报文的情况，也即会出现CLOSING状态，表示双方都正在关闭SOCKET连接。</p>
+<p>   10).CLOSE_WAIT:这种状态的含义其实是表示在等待关闭。怎么理解呢？当对方close一个SOCKET后发送FIN报文给自己，系统毫无疑问地会回应一个ACK报文给对方，此时则进入到CLOSE_WAIT状态。接下来呢，实际上你真正需要考虑的事情是察看你是否还有数据发送给对方，如果没有的话， 那么你也就可以close这个SOCKET，发送FIN报文给对方，也即关闭连接。所以你在CLOSE_WAIT状态下，需要完成的事情是等待你去关闭连接。</p>
+<p>   11).LAST_ACK: 它是被动关闭一方在发送FIN报文后，最后等待对方的ACK报文。当收到ACK报文后，也即可以进入到CLOSED可用状态了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -176,119 +191,87 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Cheatsheet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/12/STLcontainers%E7%9A%84%E9%80%89%E6%8B%A9/" class="archive-article-date">
-  	<time datetime="2020-02-12T15:28:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/12/STLcontainers%E7%9A%84%E9%80%89%E6%8B%A9/">STLcontainers的选择</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Network</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Cheatsheet</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TCP</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
+<nav id="article-nav">
+  
+    <a href="/2020/03/25/%E7%BE%8E%E5%9B%A22020%E6%A0%A1%E6%8B%9B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          美团2020校招
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/05/%E4%BB%80%E4%B9%88%E9%83%BD%E6%9C%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">什么都有</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/28/C++-Cheatsheet/" class="archive-article-date">
-  	<time datetime="2019-11-28T04:25:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-28</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP"><span class="toc-number">1.</span> <span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP中的状态"><span class="toc-number">2.</span> <span class="toc-text">TCP中的状态</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/28/C++-Cheatsheet/">C++ Cheatsheet</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Cheatsheet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -311,9 +294,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

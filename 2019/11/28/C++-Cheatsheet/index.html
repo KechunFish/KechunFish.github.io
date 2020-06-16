@@ -9,14 +9,14 @@
   <title>C++ Cheatsheet | Kechuno 顾可纯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="unordered_map&amp;lt;int, int&amp;gt;1234567unordered_map&amp;lt;int, int&amp;gt; example;&#x2F;&#x2F; Input:example[1] = 5;example[2] = 10;&#x2F;&#x2F; Output:output = example[1];  this1234567891011121314151617181920212223242526class E">
-<meta name="keywords" content="Cheatsheet,C++">
+<meta name="keywords" content="C++,Cheatsheet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ Cheatsheet">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;28&#x2F;C++-Cheatsheet&#x2F;index.html">
 <meta property="og:site_name" content="Kechuno 顾可纯">
 <meta property="og:description" content="unordered_map&amp;lt;int, int&amp;gt;1234567unordered_map&amp;lt;int, int&amp;gt; example;&#x2F;&#x2F; Input:example[1] = 5;example[2] = 10;&#x2F;&#x2F; Output:output = example[1];  this1234567891011121314151617181920212223242526class E">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-10T16:59:42.533Z">
+<meta property="og:updated_time" content="2020-05-24T20:20:54.721Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kechuno 顾可纯" type="application/atom+xml">
@@ -154,7 +154,7 @@
 
         
         <a href="/2019/11/28/C++-Cheatsheet/" class="archive-article-date">
-  	<time datetime="2019-11-28T11:25:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-28</time>
+  	<time datetime="2019-11-28T04:25:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-28</time>
 </a>
         
       </header>
@@ -195,7 +195,8 @@
 <h3 id="pointer-amp-pointer-of-pointer"><a href="#pointer-amp-pointer-of-pointer" class="headerlink" title="pointer &amp; pointer of pointer"></a>pointer &amp; pointer of pointer</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> var = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> *ptr = &amp;var;</span><br><span class="line"><span class="keyword">int</span> ptr = &amp;var;</span><br><span class="line"><span class="comment">// *ptr 是var的值，ptr是var的address</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> **ptrptr = &amp;ptr;</span><br><span class="line">ptrptr = &amp;ptr;</span><br><span class="line">*ptrptr = ptr;</span><br><span class="line"><span class="comment">//这两个是一样的</span></span><br><span class="line"></span><br><span class="line">ListNode* ans = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">ListNode* cur = ans;</span><br><span class="line">cur = ans;</span><br><span class="line"><span class="comment">//这两个也是一样的</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="一些"><a href="#一些" class="headerlink" title="一些"></a>一些</h3><p>当作为函数的参数进行传递时，数组就自动退化为同类型的指针。<br>常量字符串放到单独的一个内存区域，当几个指针赋值给相同的常量字符串时，它们实际上会指向相同的内存地址。</p>
-<h3 id="if-4-amp-5"><a href="#if-4-amp-5" class="headerlink" title="if(4 &amp; 5)"></a>if(4 &amp; 5)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> four = <span class="number">4</span>;  <span class="comment">//100</span></span><br><span class="line">	<span class="keyword">int</span> five = <span class="number">5</span>;  <span class="comment">//101</span></span><br><span class="line">	<span class="keyword">if</span> (four &amp; five) <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"if is 1"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"if is 0"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">//if is 1</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="if-4-amp-5"><a href="#if-4-amp-5" class="headerlink" title="if(4 &amp; 5)"></a>if(4 &amp; 5)</h3><p>four &amp; five = 100 所以是正确的<br>但是 100 &amp; 1 就是错误的</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> four = <span class="number">4</span>;  <span class="comment">//100</span></span><br><span class="line">	<span class="keyword">int</span> five = <span class="number">5</span>;  <span class="comment">//101</span></span><br><span class="line">	<span class="keyword">if</span> (four &amp; five) <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"if is 1"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"if is 0"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">//if is 1</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="function-pointer"><a href="#function-pointer" class="headerlink" title="function pointer"></a>function pointer</h3><h3 id="std-swap"><a href="#std-swap" class="headerlink" title="std::swap()"></a>std::swap()</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; test&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line">	<span class="keyword">auto</span> it1 = test.begin();</span><br><span class="line">	<span class="keyword">auto</span> it2 = test.end() - <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">std</span>::swap(*it1, *it2);   <span class="comment">// 3 2 1</span></span><br><span class="line">	<span class="built_in">std</span>::swap(it1, it2);	 <span class="comment">// 1 2 3 但是it1指着3，it2指着1了</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> x : test) <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -225,10 +226,26 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">type</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line"> </span><br><span class="line">    type(): i(<span class="number">3</span>) &#123;&#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> v)</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="comment">// this-&gt;i = v;                 // compile error: this is a pointer to const</span></span><br><span class="line">        <span class="keyword">const_cast</span>&lt;type*&gt;(<span class="keyword">this</span>)-&gt;i = v; <span class="comment">// OK as long as the type object isn't const</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">3</span>;                 <span class="comment">// i is not declared const</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>&amp; rci = i; </span><br><span class="line">    <span class="keyword">const_cast</span>&lt;<span class="keyword">int</span>&amp;&gt;(rci) = <span class="number">4</span>; <span class="comment">// OK: modifies i</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"i = "</span> &lt;&lt; i &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"> </span><br><span class="line">    type t; <span class="comment">// if this was const type t, then t.f(4) would be undefined behavior</span></span><br><span class="line">    t.f(<span class="number">4</span>);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"type::i = "</span> &lt;&lt; t.i &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> j = <span class="number">3</span>; <span class="comment">// j is declared const</span></span><br><span class="line">    <span class="keyword">int</span>* pj = <span class="keyword">const_cast</span>&lt;<span class="keyword">int</span>*&gt;(&amp;j);</span><br><span class="line">    <span class="comment">// *pj = 4;      // undefined behavior</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">void</span> (type::* pmf)(<span class="keyword">int</span>) <span class="keyword">const</span> = &amp;type::f; <span class="comment">// pointer to member function</span></span><br><span class="line">    <span class="comment">// const_cast&lt;void(type::*)(int)&gt;(pmf);   // compile error: const_cast does</span></span><br><span class="line">                                              <span class="comment">// not work on function pointers</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i = 4</span><br><span class="line">type::i = 4</span><br></pre></td></tr></table></figure>
 
-
-
-
-
+<h3 id="删除内容"><a href="#删除内容" class="headerlink" title="删除内容"></a>删除内容</h3><p>1.对于序列容器vector,deque来说，使用erase(itertor)后，后边的每个元素的迭代器都会失效，但是后边每个元素都会往前移动一个位置，但是erase会返回下一个有效的迭代器；<br>2.对于关联容器map set来说，使用了erase(iterator)后，当前元素的迭代器失效，但是其结构是红黑树，删除当前元素的，不会影响到下一个元素的迭代器，所以在调用erase之前，记录下一个元素的迭代器即可。<br>3.对于list来说，它使用了不连续分配的内存，并且它的erase方法也会返回下一个有效的iterator，因此上面两种正确的方法都可以使用。</p>
+<h3 id="左值右值"><a href="#左值右值" class="headerlink" title="左值右值"></a>左值右值</h3><p>右值引用是C++11中引入的新特性 , 它实现了转移语义和精确传递。它的主要目的有两个方面：</p>
+<ol>
+<li><p>消除两个对象交互时不必要的对象拷贝，节省运算存储资源，提高效率。</p>
+</li>
+<li><p>能够更简洁明确地定义泛型函数。</p>
+</li>
+</ol>
+<p>左值和右值的概念：</p>
+<p>左值：能对表达式取地址、或具名对象/变量。一般指表达式结束后依然存在的持久对象。</p>
+<p>右值：不能对表达式取地址，或匿名对象。一般指表达式结束就不再存在的临时对象。</p>
+<p>右值引用和左值引用的区别：</p>
+<ol>
+<li><p>左值可以寻址，而右值不可以。</p>
+</li>
+<li><p>左值可以被赋值，右值不可以被赋值，可以用来给左值赋值。</p>
+</li>
+<li><p>左值可变,右值不可变（仅对基础类型适用，用户自定义类型右值引用可以通过成员函数改变）。</p>
+</li>
+</ol>
 <h3 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a>sizeof</h3><p>The sizeof is a keyword, but it is a compile-time operator that determines the size, in bytes, of a variable or data type.<br>The result of sizeof is always nonzero, even if applied to an empty class type.</p>
 <p>sizeof does not evaluate the expression,and even if the expression designates a polymorphic object, the result is the size of the static type of the expression.</p>
 <h3 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a>unique_ptr</h3><p>另外unique_ptr还有更聪明的地方：当程序试图将一个 unique_ptr 赋值给另一个时，如果源 unique_ptr 是个临时右值，编译器允许这么做；如果源 unique_ptr 将存在一段时间，编译器将禁止这么做</p>
@@ -277,11 +294,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Cheatsheet</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Cheatsheet</a>
         		</li>
       		
 		</ul>
@@ -338,7 +355,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#unordered-map-lt-int-int-gt"><span class="toc-number">1.</span> <span class="toc-text">unordered_map&lt;int, int&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-number">2.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const-amp-amp-mutable"><span class="toc-number">3.</span> <span class="toc-text">const &amp;&amp; mutable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-amp-amp-extern"><span class="toc-number">4.</span> <span class="toc-text">static &amp;&amp; extern</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#priority-queue"><span class="toc-number">5.</span> <span class="toc-text">priority_queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#337-House-Robber-III"><span class="toc-number">6.</span> <span class="toc-text">337. House Robber III</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pointer-amp-pointer-of-pointer"><span class="toc-number">7.</span> <span class="toc-text">pointer &amp; pointer of pointer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些"><span class="toc-number">8.</span> <span class="toc-text">一些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if-4-amp-5"><span class="toc-number">9.</span> <span class="toc-text">if(4 &amp; 5)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#function-pointer"><span class="toc-number">10.</span> <span class="toc-text">function pointer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-swap"><span class="toc-number">11.</span> <span class="toc-text">std::swap()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bubble-sort"><span class="toc-number">12.</span> <span class="toc-text">bubble sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#selction-sort"><span class="toc-number">13.</span> <span class="toc-text">selction sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">14.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-cast"><span class="toc-number">15.</span> <span class="toc-text">static_cast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#polymorphism-多态"><span class="toc-number">16.</span> <span class="toc-text">polymorphism 多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dynamic-cast"><span class="toc-number">17.</span> <span class="toc-text">dynamic_cast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const-cast"><span class="toc-number">18.</span> <span class="toc-text">const_cast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sizeof"><span class="toc-number">19.</span> <span class="toc-text">sizeof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unique-ptr"><span class="toc-number">20.</span> <span class="toc-text">unique_ptr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-function"><span class="toc-number">21.</span> <span class="toc-text">virtual function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#attributes-constructor-and-destructor"><span class="toc-number">22.</span> <span class="toc-text">attributes constructor and destructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code放在哪一个部分"><span class="toc-number">23.</span> <span class="toc-text">code放在哪一个部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rvalue-amp-lvalue"><span class="toc-number">24.</span> <span class="toc-text">rvalue &amp; lvalue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-function"><span class="toc-number">25.</span> <span class="toc-text">std::function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda"><span class="toc-number">26.</span> <span class="toc-text">lambda</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#singletons"><span class="toc-number">27.</span> <span class="toc-text">singletons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete-amp-default"><span class="toc-number">28.</span> <span class="toc-text">=delete &amp; =default</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#override"><span class="toc-number">29.</span> <span class="toc-text">override</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#implicit-conversion-and-the-explicit-keyword"><span class="toc-number">30.</span> <span class="toc-text">implicit conversion and the explicit keyword</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lvalue-amp-rvalue"><span class="toc-number">31.</span> <span class="toc-text">lvalue &amp; rvalue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-gt-amp-“”"><span class="toc-number">32.</span> <span class="toc-text">&lt;&gt; &amp; “”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-ref"><span class="toc-number">33.</span> <span class="toc-text">std::ref()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multimap"><span class="toc-number">34.</span> <span class="toc-text">multimap</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#unordered-map-lt-int-int-gt"><span class="toc-number">1.</span> <span class="toc-text">unordered_map&lt;int, int&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-number">2.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const-amp-amp-mutable"><span class="toc-number">3.</span> <span class="toc-text">const &amp;&amp; mutable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-amp-amp-extern"><span class="toc-number">4.</span> <span class="toc-text">static &amp;&amp; extern</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#priority-queue"><span class="toc-number">5.</span> <span class="toc-text">priority_queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#337-House-Robber-III"><span class="toc-number">6.</span> <span class="toc-text">337. House Robber III</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pointer-amp-pointer-of-pointer"><span class="toc-number">7.</span> <span class="toc-text">pointer &amp; pointer of pointer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些"><span class="toc-number">8.</span> <span class="toc-text">一些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if-4-amp-5"><span class="toc-number">9.</span> <span class="toc-text">if(4 &amp; 5)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#function-pointer"><span class="toc-number">10.</span> <span class="toc-text">function pointer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-swap"><span class="toc-number">11.</span> <span class="toc-text">std::swap()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bubble-sort"><span class="toc-number">12.</span> <span class="toc-text">bubble sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#selction-sort"><span class="toc-number">13.</span> <span class="toc-text">selction sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">14.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-cast"><span class="toc-number">15.</span> <span class="toc-text">static_cast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#polymorphism-多态"><span class="toc-number">16.</span> <span class="toc-text">polymorphism 多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dynamic-cast"><span class="toc-number">17.</span> <span class="toc-text">dynamic_cast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const-cast"><span class="toc-number">18.</span> <span class="toc-text">const_cast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除内容"><span class="toc-number">19.</span> <span class="toc-text">删除内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#左值右值"><span class="toc-number">20.</span> <span class="toc-text">左值右值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sizeof"><span class="toc-number">21.</span> <span class="toc-text">sizeof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unique-ptr"><span class="toc-number">22.</span> <span class="toc-text">unique_ptr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-function"><span class="toc-number">23.</span> <span class="toc-text">virtual function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#attributes-constructor-and-destructor"><span class="toc-number">24.</span> <span class="toc-text">attributes constructor and destructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code放在哪一个部分"><span class="toc-number">25.</span> <span class="toc-text">code放在哪一个部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rvalue-amp-lvalue"><span class="toc-number">26.</span> <span class="toc-text">rvalue &amp; lvalue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-function"><span class="toc-number">27.</span> <span class="toc-text">std::function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda"><span class="toc-number">28.</span> <span class="toc-text">lambda</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#singletons"><span class="toc-number">29.</span> <span class="toc-text">singletons</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete-amp-default"><span class="toc-number">30.</span> <span class="toc-text">=delete &amp; =default</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#override"><span class="toc-number">31.</span> <span class="toc-text">override</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#implicit-conversion-and-the-explicit-keyword"><span class="toc-number">32.</span> <span class="toc-text">implicit conversion and the explicit keyword</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lvalue-amp-rvalue"><span class="toc-number">33.</span> <span class="toc-text">lvalue &amp; rvalue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-gt-amp-“”"><span class="toc-number">34.</span> <span class="toc-text">&lt;&gt; &amp; “”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#std-ref"><span class="toc-number">35.</span> <span class="toc-text">std::ref()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multimap"><span class="toc-number">36.</span> <span class="toc-text">multimap</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -446,6 +463,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -454,15 +475,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +507,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color5">2020</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,11 +519,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">

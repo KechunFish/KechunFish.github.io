@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Network复习 | Kechuno 顾可纯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="https:&#x2F;&#x2F;www.mayiwenku.com&#x2F;p-4641522.html!!!https:&#x2F;&#x2F;www.cnblogs.com&#x2F;onepixel&#x2F;p&#x2F;7092302.html DNShttps:&#x2F;&#x2F;blog.csdn.net&#x2F;yanbaohttps:&#x2F;&#x2F;blog.csdn.net&#x2F;yanbao4070&#x2F;article&#x2F;details&#x2F;798920324070&#x2F;article&#x2F;details&#x2F;">
+  <meta name="description" content="https:&#x2F;&#x2F;www.mayiwenku.com&#x2F;p-4641522.html!!!https:&#x2F;&#x2F;www.cnblogs.com&#x2F;onepixel&#x2F;p&#x2F;7092302.html layer首先，我们需要知道TCP在网络OSI的七层模型中的第四层——Transport层，IP在第三层——Network层，ARP在第二层——DataLink层，在第二层上的数据，我们叫Frame，在第三层上的数据叫">
 <meta name="keywords" content="复习,Network">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Network复习">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;29&#x2F;Network%E5%A4%8D%E4%B9%A0&#x2F;index.html">
 <meta property="og:site_name" content="Kechuno 顾可纯">
-<meta property="og:description" content="https:&#x2F;&#x2F;www.mayiwenku.com&#x2F;p-4641522.html!!!https:&#x2F;&#x2F;www.cnblogs.com&#x2F;onepixel&#x2F;p&#x2F;7092302.html DNShttps:&#x2F;&#x2F;blog.csdn.net&#x2F;yanbaohttps:&#x2F;&#x2F;blog.csdn.net&#x2F;yanbao4070&#x2F;article&#x2F;details&#x2F;798920324070&#x2F;article&#x2F;details&#x2F;">
+<meta property="og:description" content="https:&#x2F;&#x2F;www.mayiwenku.com&#x2F;p-4641522.html!!!https:&#x2F;&#x2F;www.cnblogs.com&#x2F;onepixel&#x2F;p&#x2F;7092302.html layer首先，我们需要知道TCP在网络OSI的七层模型中的第四层——Transport层，IP在第三层——Network层，ARP在第二层——DataLink层，在第二层上的数据，我们叫Frame，在第三层上的数据叫">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-10T19:42:37.494Z">
+<meta property="og:updated_time" content="2020-03-25T14:00:39.632Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kechuno 顾可纯" type="application/atom+xml">
@@ -154,7 +154,7 @@
 
         
         <a href="/2020/02/29/Network%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-02-29T14:53:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
+  	<time datetime="2020-02-29T07:53:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
 </a>
         
       </header>
@@ -162,6 +162,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="https://www.mayiwenku.com/p-4641522.html" target="_blank" rel="noopener">https://www.mayiwenku.com/p-4641522.html</a><br>!!!<a href="https://www.cnblogs.com/onepixel/p/7092302.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/p/7092302.html</a></p>
+<h3 id="layer"><a href="#layer" class="headerlink" title="layer"></a>layer</h3><p>首先，我们需要知道TCP在网络OSI的七层模型中的第四层——Transport层，IP在第三层——Network层，ARP在第二层——DataLink层，在第二层上的数据，我们叫Frame，在第三层上的数据叫Packet，第四层的数据叫Segment。<br>我们程序的数据首先会打到TCP的Segment中，然后TCP的Segment会打到IP的Packet中，然后再打到以太网Ethernet的Frame中，传到对端后，各个层解析自己的协议，然后把数据交给更高层的协议处理。</p>
 <h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p><a href="https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032" target="_blank" rel="noopener">https://blog.csdn.net/yanbaohttps://blog.csdn.net/yanbao4070/article/details/798920324070/article/details/79892032</a><br>（1）递归查询<br>递归查询是一种DNS 服务器的查询模式，在该模式下DNS 服务器接收到客户机请求，必须使用一个准确的查询结果回复客户机。如果DNS 服务器本地没有存储查询DNS 信息，那么该服务器会询问其他服务器，并将返回的查询结果提交给客户机。<br>（2）迭代查询<br>DNS 服务器另外一种查询方式为迭代查询，DNS 服务器会向客户机提供其他能够解析查询请求的DNS 服务器地址，当客户机发送查询请求时，DNS 服务器并不直接回复查询结果，而是告诉客户机另一台DNS 服务器地址，客户机再向这台DNS服务器提交请求，依次循环直到返回查询的结果为止。</p>
 <h3 id="拥塞窗口-cwnd"><a href="#拥塞窗口-cwnd" class="headerlink" title="拥塞窗口, cwnd"></a>拥塞窗口, cwnd</h3><p>快重传和快恢复</p>
 <h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>网络层等到数据链层用mac地址作为通信目标，数据包到达网络等准备往数据链层发送的时候，首先会去自己的arp缓存表(存着ip-mac对应关系)去查找改目标ip的mac地址，如果查到了，就讲目标ip的mac地址封装到链路层数据包的包头。如果缓存中没有找到，会发起一个广播：who is ip XXX tell ip XXX,所有收到的广播的机器看这个ip是不是自己的，如果是自己的，则以单拨的形式将自己的mac地址回复给请求的机器</p>
@@ -189,20 +190,26 @@
 <p>1) first look at its internal list, ARP cache, to see the computer B’s ip adrress matches the MAC address<br>2) send broadcast to all computers in the local network to ask which computer has specific ip address for their mac address (then respond, then transfer, store in ARP cache)<br>ARP : Internet addresss, physical addresss, type</p>
 <p>1) dynamic entry is created automatically when a device sends out a broadcast message out on the network. not permanent, flushed out periodicly<br>2) static entry is where someone manually enters an ip to mac address association using the arp command line, reduce the traffic</p>
 <h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>生存时间 TTL(Time to Live)跳数<br>IP ::= {&lt;网络号&gt;,&lt;子网号&gt;,&lt;主机号&gt;}<br>二级IP地址，子网掩码覆盖网络号<br>三级IP地址，子网掩码覆盖网络号和子网号，但是外部看还是只有网络号</p>
+<h3 id="IPv6-amp-IPv4"><a href="#IPv6-amp-IPv4" class="headerlink" title="IPv6 &amp; IPv4"></a>IPv6 &amp; IPv4</h3><p>双协议栈<br>通过DNS查询来判断是6，还是4</p>
 <h3 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h3><p>网络层<br>路由表(目的网络地址，下一跳地址(默认端口，或者下一跳的地址))，知道去重点的下一站的端口<br>有了子网掩码，路由表需要多加一项 子网掩码</p>
 <h3 id="CIDR-无分类编制"><a href="#CIDR-无分类编制" class="headerlink" title="CIDR 无分类编制"></a>CIDR 无分类编制</h3><p>IP ::= {&lt;网络前缀&gt;,&lt;主机号&gt;}<br>128.14.35.7/20<br>路由聚合，利用路由表中的CIDR,构成超网<br>由网络前缀和下一跳地址组成，可能会得到不止一个匹配结果，选择具有最长网络前缀的路由<br>使用二叉线索查找路由表</p>
 <h3 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h3><p>在IP数据报里，作为其中的数据部分<br>ping直接使用ICMP，返回的ICMP的保温上都有时间戳<br>traceroute，TTL减少实现的(UDP)<br>4种，终点不可达，时间超过，参数问题，<br>改变路由，如果默认路由器发现主机法网某个目的地址的数据报的最佳路由应当经过网络上的另一个路由器R，急用改变路由报文把这个情况告诉主机<br>把收到的需要进行报错的报文的首部和数据字段前8个字节提取踹</p>
 <h3 id="内部网关协议-IGP"><a href="#内部网关协议-IGP" class="headerlink" title="内部网关协议 IGP"></a>内部网关协议 IGP</h3><p>在一个自治系统(AS)内,RIP,OSPF</p>
 <h3 id="外部网关协议-EGP"><a href="#外部网关协议-EGP" class="headerlink" title="外部网关协议 EGP"></a>外部网关协议 EGP</h3><p>不同的自治系统中,BGP</p>
-<h3 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h3><p>紧和相邻路由器交换信息<br>交换的信息是当前本路由器所知道的全部信息<br>按固定的时间间隔交换路由信息</p>
-<p>找出目的地的最短距离</p>
+<h3 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h3><p>使用UDP</p>
+<p>紧和相邻路由器交换信息<br>交换的信息是当前本路由器所知道的全部信息<br>按固定的时间间隔交换路由信息</p>
+<p>找出目的地的最短距离,最好路由器的路由</p>
 <p>当网络初出现故障时，要经过很长的时间才能将此信息传送到有的路由器</p>
 <h3 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h3><p>直接使用IP数据报传送</p>
-<p>向本自治系统内的所有路由器发送消息<br>发送本路由器相邻的所有路由器的链路状态<br>只有当链路转台发生变化时才发<br>(例如是同Dijkstra最短路径)<br>OSPF将AS划分为区域</p>
+<p>向本自治系统内的所有路由器发送消息，也就是向所有输出端口发送相邻路由器的链路状态<br>度量，费用，距离，时间延迟，带宽</p>
+<p>发送本路由器相邻的所有路由器的链路状态</p>
+<p>只有当链路转台发生变化时才发<br>(例如是同Dijkstra最短路径)</p>
+<p>OSPF将AS划分为区域<br>主干路由器，自治系统边界路由器</p>
 <h3 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h3><p>BGP发言人</p>
 <h3 id="IP多播"><a href="#IP多播" class="headerlink" title="IP多播"></a>IP多播</h3><p>IGMP<br>发送一次，路由器在转发分组时把收到的的分组复制成三个副本</p>
 <h3 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h3><p>所有通过互联网传送的数据都是加密的<br>在效果上和专用网是一样的</p>
 <h3 id="NAT"><a href="#NAT" class="headerlink" title="NAT"></a>NAT</h3><p>网络地址转换(Network Address Translation)<br>要在NAT路由器上将本地地址转换成全球IP地址<br>NAT路由器具有n个全球IP地址是，专用网内最多可以用是有n台主机接入到互联网<br>可以多个本地地址主机，公用一个NAT路由器上的全球IP地址<br>网络地址于端口号转换</p>
+<p>Static NAT 一个本地ip对应一个public IP<br>Dynamic NAT本地用完后可以重新分配<br>Port Address Translation, each host on a LAN is translated to the router’ WAN side public IP address, with a different port number assignment<br>Port Forwarding, dealing more with incoming traffic, one public IP address but with several public servers, using port; </p>
 <h3 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h3><p>复用和分用的地方<br>通过协议端口号解决</p>
 <h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><p>发送方的UDP对应程序交下来，在添加首部之后就交付给IP层<br>对应用层的报文，不合并也不拆分，保留报文的边界(应用层必须选择合适的大小报文)<br>UDP没有拥塞控制，网络出现拥塞也不会降低主机的发送速率<br>支持一对一，一对多，多对一<br>首部只有八个字节</p>
 <h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>连接只能是点对点(两个套接字socket)<br>TCP链接的断电叫做套接字socket<br>端口号拼接到IP地址构成了套接字<br>套接字socket = (IP地址：端口号)<br>TCP ::= {socket1, socket2} = {(IP1：port)，(IP2：port2)}</p>
@@ -215,6 +222,16 @@
 <h3 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h3><p>知名文件的类型与格式<br>复制整个文件<br>想要读取，得先获得一个本地的文件副本<br>想要修改，只能对本地的进行修改，然后再将修改后的文件副本传回到源节点<br>允许多个同时<br>TCP！！<br>主要功能是煎炒不同操作系统下 处理文件的不兼容性<br>服务器,一个主进程接受新的请求，几个从属进程处理单个请求<br>port: 21</p>
 <p>客户端和服务器有两个TCP连接<br>控制连接，数据连接<br>传送请求， 传输文件</p>
 <h3 id="TFTP"><a href="#TFTP" class="headerlink" title="TFTP"></a>TFTP</h3><p>简单文件传送协议<br>UDP，有自己的差错改正措施<br>优势，当向多个机器下载时，代码占内存小<br>设备执行只读存储器中的代码，在网络上广播一个TFTP请求，网络上的服务器就发送响应</p>
+<h3 id="SSL-amp-HTTPS"><a href="#SSL-amp-HTTPS" class="headerlink" title="SSL &amp; HTTPS"></a>SSL &amp; HTTPS</h3><p>A ssl certificate is a web server’s digital certificate, issued by a third party, and verifies the identity of the web server and its public key</p>
+<p>(Any message encrypted with Bob’s public key can only be decrypted with Bob’s private key)<br>(Anyone with access to Alic’s public key can vertify that signature could only created by Alice’s private key)</p>
+<ol>
+<li>My browser requests secure pages(HTTPS) from web server</li>
+<li>The server sends its public key with SSL certificate</li>
+<li>My browser will check the vadility of certificate(a digital signature is created by a CA’s private key, my browser is previously installed with many major CAs’s public keys)</li>
+<li>My browser creates a symmetric, shared secret key, it keeps one and gives a copy to the web server. The key is encrypted by server’s public key</li>
+<li>Server decrypts with its private key</li>
+<li>They can talk with the same key</li>
+</ol>
 
       
 
@@ -289,7 +306,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS"><span class="toc-number">1.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拥塞窗口-cwnd"><span class="toc-number">2.</span> <span class="toc-text">拥塞窗口, cwnd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP"><span class="toc-number">3.</span> <span class="toc-text">ARP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时延"><span class="toc-number">4.</span> <span class="toc-text">时延</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#物理层"><span class="toc-number">5.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据链路层"><span class="toc-number">6.</span> <span class="toc-text">数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PPP"><span class="toc-number">6.0.1.</span> <span class="toc-text">PPP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSMA-CD协议"><span class="toc-number">7.</span> <span class="toc-text">CSMA/CD协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hub-集线器"><span class="toc-number">8.</span> <span class="toc-text">hub,集线器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bridge，网桥"><span class="toc-number">9.</span> <span class="toc-text">bridge，网桥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#以太网交换机-switch"><span class="toc-number">10.</span> <span class="toc-text">以太网交换机(switch)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLAN-虚拟局域网"><span class="toc-number">11.</span> <span class="toc-text">VLAN 虚拟局域网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络层"><span class="toc-number">12.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP协议"><span class="toc-number">13.</span> <span class="toc-text">ARP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP"><span class="toc-number">14.</span> <span class="toc-text">IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由器"><span class="toc-number">15.</span> <span class="toc-text">路由器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CIDR-无分类编制"><span class="toc-number">16.</span> <span class="toc-text">CIDR 无分类编制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ICMP"><span class="toc-number">17.</span> <span class="toc-text">ICMP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内部网关协议-IGP"><span class="toc-number">18.</span> <span class="toc-text">内部网关协议 IGP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部网关协议-EGP"><span class="toc-number">19.</span> <span class="toc-text">外部网关协议 EGP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RIP"><span class="toc-number">20.</span> <span class="toc-text">RIP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSPF"><span class="toc-number">21.</span> <span class="toc-text">OSPF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP"><span class="toc-number">22.</span> <span class="toc-text">BGP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP多播"><span class="toc-number">23.</span> <span class="toc-text">IP多播</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VPN"><span class="toc-number">24.</span> <span class="toc-text">VPN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NAT"><span class="toc-number">25.</span> <span class="toc-text">NAT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运输层"><span class="toc-number">26.</span> <span class="toc-text">运输层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UDP"><span class="toc-number">27.</span> <span class="toc-text">UDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP"><span class="toc-number">28.</span> <span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS-1"><span class="toc-number">29.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP"><span class="toc-number">30.</span> <span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TFTP"><span class="toc-number">31.</span> <span class="toc-text">TFTP</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#layer"><span class="toc-number">1.</span> <span class="toc-text">layer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS"><span class="toc-number">2.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拥塞窗口-cwnd"><span class="toc-number">3.</span> <span class="toc-text">拥塞窗口, cwnd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP"><span class="toc-number">4.</span> <span class="toc-text">ARP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时延"><span class="toc-number">5.</span> <span class="toc-text">时延</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#物理层"><span class="toc-number">6.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据链路层"><span class="toc-number">7.</span> <span class="toc-text">数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PPP"><span class="toc-number">7.0.1.</span> <span class="toc-text">PPP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSMA-CD协议"><span class="toc-number">8.</span> <span class="toc-text">CSMA/CD协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hub-集线器"><span class="toc-number">9.</span> <span class="toc-text">hub,集线器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bridge，网桥"><span class="toc-number">10.</span> <span class="toc-text">bridge，网桥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#以太网交换机-switch"><span class="toc-number">11.</span> <span class="toc-text">以太网交换机(switch)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLAN-虚拟局域网"><span class="toc-number">12.</span> <span class="toc-text">VLAN 虚拟局域网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络层"><span class="toc-number">13.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP协议"><span class="toc-number">14.</span> <span class="toc-text">ARP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP"><span class="toc-number">15.</span> <span class="toc-text">IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPv6-amp-IPv4"><span class="toc-number">16.</span> <span class="toc-text">IPv6 &amp; IPv4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由器"><span class="toc-number">17.</span> <span class="toc-text">路由器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CIDR-无分类编制"><span class="toc-number">18.</span> <span class="toc-text">CIDR 无分类编制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ICMP"><span class="toc-number">19.</span> <span class="toc-text">ICMP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内部网关协议-IGP"><span class="toc-number">20.</span> <span class="toc-text">内部网关协议 IGP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部网关协议-EGP"><span class="toc-number">21.</span> <span class="toc-text">外部网关协议 EGP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RIP"><span class="toc-number">22.</span> <span class="toc-text">RIP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSPF"><span class="toc-number">23.</span> <span class="toc-text">OSPF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP"><span class="toc-number">24.</span> <span class="toc-text">BGP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP多播"><span class="toc-number">25.</span> <span class="toc-text">IP多播</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VPN"><span class="toc-number">26.</span> <span class="toc-text">VPN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NAT"><span class="toc-number">27.</span> <span class="toc-text">NAT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运输层"><span class="toc-number">28.</span> <span class="toc-text">运输层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UDP"><span class="toc-number">29.</span> <span class="toc-text">UDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP"><span class="toc-number">30.</span> <span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS-1"><span class="toc-number">31.</span> <span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP"><span class="toc-number">32.</span> <span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TFTP"><span class="toc-number">33.</span> <span class="toc-text">TFTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL-amp-HTTPS"><span class="toc-number">34.</span> <span class="toc-text">SSL &amp; HTTPS</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -397,6 +414,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -405,15 +426,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Aboutme</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">NumPy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">TCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,11 +458,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">复习</a>
+                <a href="javascript:void(0)" class="js-tag color5">2020</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Network</a>
+                <a href="javascript:void(0)" class="js-tag color3">招聘</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -441,11 +470,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Cheatsheet</a>
               </li>
              
               <li class="article-tag-list-item">
